@@ -151,6 +151,17 @@
   --color-neutral-solid-100: #000000;
 
 
+  /*** Shadows ***/
+
+  --shadow-elevation-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); /* Elevación 1 */
+  --shadow-elevation-2: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2); /* Elevación 2 */
+  --shadow-elevation-3: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); /* Elevación 3 */
+  --shadow-elevation-4: 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); /* Elevación 4 */
+  --shadow-elevation-6: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); /* Elevación 6 */
+  --shadow-elevation-8: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2); /* Elevación 8 */
+  --shadow-elevation-12: 0 12px 16px 1px rgba(0, 0, 0, 0.14), 0 4px 22px 3px rgba(0, 0, 0, 0.12), 0 6px 7px -4px rgba(0, 0, 0, 0.2); /* Elevación 12 */
+  --shadow-elevation-16: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); /* Elevación 16 */
+
   /*** Color Tokens ***/
 
   --color-aux-a: #00a3ff;
@@ -300,12 +311,15 @@ h6 { font-size: 1.125rem; font-weight: 700; }
 .text-align-right { text-align: right; }
 .text-align-justify { text-align: justify; }
 
-/* Text transform */
+/* Text format */
 
-.text-transform-bold { font-weight: bold; }
-.text-transform-italic { font-style: italic; }
+.text-bold { font-weight: bold; }
+.text-italic { font-style: italic; }
+
+/* Text transform */
 .text-transform-underline { text-decoration: underline; }
 .text-transform-capitalize { text-transform: capitalize; }
+.text-transform-uppercase { text-transform: uppercase; }
 
 /* ==================================== Lists ==================================== */
 /* Text size and transformation */
@@ -383,8 +397,33 @@ li {
 .transition-dark { --color1: var(--color-neutral-solid-80); }
 
 .bg-homepage{
-  background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #FF518F 0%, #31FFE6 100%);
+  background: linear-gradient(180deg, rgba(13, 16, 38, 0.8) 0%, #00010D 60.47%), url('../img/mosaic.png'), lightgray 50%;
+  background-repeat: repeat;
 }
+
+/* .bg-homepage {
+  background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #d151ff 0%, #31FFE6 100%);
+  animation: gradientAnimation 10s infinite linear; /* Adjust the duration as needed 
+} */
+
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #d151ff 0%, #31FFE6 100%);
+  }
+  25% {
+    background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #31FFE6 0%, #d151ff 100%);
+  }
+  50% {
+    background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #d151ff 0%, #31FFE6 100%);
+  }
+  75% {
+    background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #31FFE6 0%, #d151ff 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #d151ff 0%, #31FFE6 100%);
+  }
+}
+
 
 /* ==================================== font color ==================================== */
 /* SECTION DESCRIPTION HERE */
@@ -727,7 +766,6 @@ li {
 
 /* Border Radius */
 
-
 .rounded-004 { border-radius: var(--base-size-4); }
 .rounded-008 { border-radius: var(--base-size-8); }
 .rounded-012 { border-radius: var(--base-size-12); }
@@ -760,34 +798,38 @@ li {
 .w-90 { width: 90%; }
 .w-100 { width: 100%; }
 
-/* ==================================== flexbox ==================================== */
+/* == Flexbox == */
 /* Classes to use as flexbox configurations */
 
 /* Flex Container */
-
 .d-flex { display: flex; }
 
+/* Flex Direction */
 .flex-direction-row { flex-direction: row; }
 .flex-direction-row-reverse { flex-direction: row-reverse; }
 .flex-direction-column { flex-direction: column; }
 .flex-direction-column-reverse { flex-direction: column-reverse; }
 
+/* Flex Wrap */
 .flex-wrap { flex-wrap: wrap; }
 .flex-nowrap { flex-wrap: nowrap; }
 .flex-wrap-reverse { flex-wrap: wrap-reverse; }
 
+/* Justify content */
 .justify-content-center { justify-content: center; }
 .justify-content-start { justify-content: flex-start; }
 .justify-content-end { justify-content: flex-end; }
 .justify-content-between { justify-content: space-between; }
 .justify-content-around { justify-content: space-around; }
 
+/* Align items */
 .align-items-center { align-items: center; }
 .align-items-start { align-items: flex-start; }
 .align-items-end { align-items: flex-end; }
 .align-items-baseline { align-items: baseline; }
 .align-items-stretch { align-items: stretch; }
 
+/* Align content */
 .align-content-center { align-content: center; }
 .align-content-start { align-content: flex-start; }
 .align-content-end { align-content: flex-end; }
@@ -795,6 +837,7 @@ li {
 .align-content-around { align-content: space-around; }
 .align-content-stretch { align-content: stretch; }
 
+/* Order */
 .order-1 { order: 1; }
 .order-2 { order: 2; }
 .order-3 { order: 3; }
@@ -806,58 +849,29 @@ li {
 .order-9 { order: 9; }
 .order-10 { order: 10; }
 
+/* Flex grow */
 .flex-grow-1 { flex-grow: 1; }
 .flex-shrink-1 { flex-shrink: 1; }
 .flex-shrink-0 { flex-shrink: 0; }
 
+/* Align self */
 .align-self-center { align-self: center; }
 .align-self-start { align-self: flex-start; }
 .align-self-end { align-self: flex-end; }
 .align-self-stretch { align-self: stretch; }
 
 
-/* ==================================== grid ==================================== */
-/* Classes to use to create grid layouts */
+/* == Grid == */
+/* These classes help you create and control grid layouts in CSS, providing flexibility and control over the arrangement of elements on a web page. */
 
-/* Basic Grid */
-.d-grid {
-  display: grid;
-}
-
-/* Grid with Three Columns */
-.grid-three-columns {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-/* Grid with Two Columns */
-.grid-two-columns {
-  grid-template-columns: 1fr 1fr;
-}
-
-/* Grid with Equal Rows */
-.grid-equal-rows {
-  grid-auto-rows: 1fr;
-}
-
-/* Grid with Fixed Row Height */
-.grid-fixed-row-height {
-  grid-auto-rows: 100px; /* Adjust the height as needed */
-}
-
-/* Grid Gap */
-.grid-gap {
-  gap: 1rem; /* Adjust the gap size as needed */
-}
-
-/* Grid Item Spanning Multiple Columns */
-.grid-item-span-two-columns {
-  grid-column: span 2;
-}
-
-/* Grid Item Spanning Multiple Rows */
-.grid-item-span-two-rows {
-  grid-row: span 2;
-}
+.d-grid { display: grid; }
+.grid-three-columns { grid-template-columns: 1fr 1fr 1fr; }
+.grid-two-columns { grid-template-columns: 1fr 1fr; }
+.grid-equal-rows { grid-auto-rows: 1fr; }
+.grid-fixed-row-height { grid-auto-rows: 100px; /* Adjust the height as needed */ }
+.grid-gap { gap: 1rem; /* Adjust the gap size as needed */ }
+.grid-item-span-two-columns { grid-column: span 2; }
+.grid-item-span-two-rows { grid-row: span 2; }
 
 @media (max-width: 767px) {
   .d-grid {
@@ -871,8 +885,8 @@ li {
   }
 }
 
-/* ==================================== Material symbols ==================================== */
-/* SECTION DESCRIPTION HERE */
+/* === Material symbols === */
+/* These classes help you style the material design symbols font collection. */
 
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
@@ -888,8 +902,229 @@ li {
   direction: ltr;
 }
 
-/* ==================================== buttons ==================================== */
-/* SECTION DESCRIPTION HERE */
+.material-symbols-outlined.s {
+  font-size: 16px;
+}
+
+.material-symbols-outlined.l {
+  font-size: 24px;
+}
+
+.material-symbols-outlined.xl {
+  font-size: 32px !important;
+}
+
+/* == Basic Styles == */
+
+/* These classes are helpful for creating consistent and customizable themes for your elements, 
+making it easier to switch between light and dark themes or apply variations within each theme. 
+They are designed to provide a quick and consistent way to style elements for different 
+visual aesthetics on your website or application. */
+
+/* Base styles */
+
+.dark {
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-100);
+  border-color: 1px solid var(--color-transparent-light-20);
+}
+
+.light {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+  border-color: 1px solid var(--color-transparent-dark-20);
+}
+
+/* Modifiers */
+
+.dark.secondary {
+  background: var(--color-neutral-800);
+  color: var(--color-neutral-100);
+}
+
+.light.secondary {
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+}
+
+/* Brand colors */
+
+/* Main */
+
+.dark.brand-main{
+  background: var(--color-brand-main-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-main{
+  background: var(--color-brand-main-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-main h1,
+.light.brand-main h2,
+.light.brand-main h3,
+.light.brand-main h4,
+.light.brand-main h5,
+.light.brand-main h6 {
+  color: var(--color-brand-main-500);
+}
+
+/* Accent */
+
+.dark.brand-accent{
+  background: var(--color-brand-accent-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-accent{
+  background: var(--color-brand-accent-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-accent h1,
+.light.brand-accent h2,
+.light.brand-accent h3,
+.light.brand-accent h4,
+.light.brand-accent h5,
+.light.brand-accent h6 {
+  color: var(--color-brand-accent-500);
+}
+
+/* Aux */
+
+.dark.brand-aux{
+  background: var(--color-brand-aux-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-aux{
+  background: var(--color-brand-aux-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-aux h1,
+.light.brand-aux h2,
+.light.brand-aux h3,
+.light.brand-aux h4,
+.light.brand-aux h5,
+.light.brand-aux h6 {
+  color: var(--color-brand-aux-600);
+}
+
+.brand-aux .btn.main{
+  background: var(--color-brand-aux-400);
+  color: var(--color-brand-aux-800);
+}
+
+/* Contextual styles */
+
+/* Success */
+
+.dark.success{
+  background: var(--color-context-success-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.success{
+  background: var(--color-context-success-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.success h1,
+.light.success h2,
+.light.success h3,
+.light.success h4,
+.light.success h5,
+.light.success h6 {
+  color: var(--color-context-success-600);
+}
+
+/* Warning */
+
+.warning, .dark.warning{
+  background: var(--color-context-warning-500);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.dark.warning .text-secondary{
+  color: var(--color-transparent-dark-40)
+}
+
+.light.warning{
+  background: var(--color-context-warning-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.warning h1,
+.light.warning h2,
+.light.warning h3,
+.light.warning h4,
+.light.warning h5,
+.light.warning h6 {
+  color: var(--color-context-warning-700);
+}
+
+/* Danger */
+
+.dark.danger{
+  background: var(--color-context-danger-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.danger{
+  background: var(--color-context-danger-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.danger h1,
+.light.danger h2,
+.light.danger h3,
+.light.danger h4,
+.light.danger h5,
+.light.danger h6 {
+  color: var(--color-context-danger-500);
+}
+
+/* Info */
+
+.dark.info{
+  background: var(--color-context-info-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.info{
+  background: var(--color-context-info-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.info h1,
+.light.info h2,
+.light.info h3,
+.light.info h4,
+.light.info h5,
+.light.info h6 {
+  color: var(--color-context-info-500);
+}
+
+/* == Buttons == */
+/* These classes let you create different type of buttons that can be used widely accross the project. */
+
+/* General styling */
 
 .btn {
   border-radius: var(--button-radius);
@@ -911,22 +1146,9 @@ a.btn {
   box-sizing: border-box;
 }
 
-/* Types */
+/* Buttons */
 
-.btn.cta {
-  background: var(--color-brand-main-500);
-  color: var(--color-neutral-100);
-  border-color: rgba(0, 0, 0, 0);
-  box-shadow: 0px 12px 48px -16px var(--color-brand-main-500);
-  transition: 300ms ease all;
-}
-
-.btn.cta:hover,  
-.btn.cta:focus {
-  background-color: var(--color-brand-main-600);
-  box-shadow: 0px 12px 48px -12px var(--color-brand-main-500);
-  border-color: rgba(0, 0, 0, 0);
-}
+/* Main buttons */
 
 .btn.main {
   background: var(--color-brand-main-500);
@@ -938,120 +1160,106 @@ a.btn {
   transform: scaleX(1.1);
 }
 
-.btn.main:active {
-  background-color: var(--color-brand-main-700);
-  border-color: var(--color-brand-main-500);
-}
+.brand-main   .btn.main { background: var(--color-brand-main-500); color: var(--color-neutral-100); }
+.brand-accent .btn.main { background: var(--color-brand-accent-500); color: var(--color-neutral-100); }
+.brand-aux    .btn.main { background: var(--color-brand-aux-500); color: var(--color-brand-aux-800); }
+.success      .btn.main { background: var(--color-context-success-500); color: var(--color-brand-aux-900); }
+.warning      .btn.main { background: var(--color-context-warning-700); color: var(--color-context-warning-100)}
+.danger       .btn.main { background: var(--color-context-danger-500); }
+.info         .btn.main { background: var(--color-context-info-500); }
 
-.btn.main.light {
-  background: var(--color-neutral-solid-00);
-  color: var(--color-brand-main-600);
-}
+/* Secondary buttons */
 
-.btn.main.light:hover,
-.btn.main.light:focus {
-  background: var(--color-neutral-solid-10);
-}
-
-.btn.main.light:active {
-  background: var(--color-neutral-solid-30);
-}
-
-.btn.main-destructive {
-  background-color: var(--color-status-danger-100);
-  color: var(--color-neutral-solid-00);
-}
-
-.btn.main-destructive:hover {
-  background: var(--color-status-danger-200);
-}
-
-.btn.second {
-  color: var(--color-neutral-solid-100);
+.btn.secondary {
   background: none;
-  border: 1px solid var(--color-neutral-alpha-dark-20);
-}
-
-.btn.second:hover,
-.btn.second:focus {
-  border: 1px solid var(--color-neutral-alpha-dark-20);
-  background: var(--color-neutral-alpha-dark-10);
-}
-
-.btn.second.light {
-  border: 1px solid var(--color-transparent-light-20);
   color: var(--color-neutral-100);
-  background: none;
+  border: 1px solid var(--color-transparent-light-20);
 }
 
-.btn.second.light:hover,
-.btn.second.light:focus {
+.btn.secondary:hover {
   background: var(--color-transparent-light-10);
 }
 
-.btn.second-destructive {
-  background: none;
-  border: 1px solid var(--color-status-danger-100);
-  color: var(--color-status-danger-100);
+.light .btn.secondary {
+  color: var(--color-transparent-dark-80);
+  border: 1px solid var(--color-transparent-dark-20);
 }
 
-.btn.second-destructive:hover {
-  background: var(--color-neutral-alpha-dark-10);
+.light .btn.secondary:hover {
+  background: var(--color-transparent-dark-10);
 }
 
-.btn.second-destructive.light {
-  background: none;
-  border: 1px solid var(--color-status-danger-50);
-  color: var(--color-status-danger-50);
-}
+.warning  .btn.secondary        { color: var(--color-transparent-dark-80); border: 1px solid var(--color-transparent-dark-10); }
+.warning  .btn.secondary:hover  { background: var(--color-transparent-dark-10); }
 
-.btn.second-destructive.light:hover {
-  background-color: var(--color-neutral-alpha-light-10);
-}
+/* Ghost buttons */
 
-.btn.third {
-  border: none;
-  background: none;
-  color: var(--color-neutral-900);
-}
-
-.btn.third:hover,
-.btn.third:focus {
-  background-color: var(--color-neutral-alpha-dark-10);
-}
-
-.btn.third.light {
-  border: none;
+.btn.ghost {
   background: none;
   color: var(--color-neutral-100);
 }
 
-.btn.third.light:hover,
-.btn.third.light:focus {
-  background-color: var(--color-transparent-light-10);
-}
-
-.btn.third-destructive {
-  border: none;
+.light .btn.ghost {
   background: none;
-  color: var(--color-status-danger-100);
+  color: var(--color-transparent-dark-80);
 }
 
-.btn.third-destructive:hover,
-.btn.third-destructive:focus {
-  background-color: var(--color-neutral-alpha-dark-10);
+.btn.ghost:hover {
+  background: var(--color-transparent-light-10);
 }
 
-.btn.third-destructive.light {
-  border: none;
-  background: none;
-  color: var(--color-status-danger-50);
+.light .btn.ghost:hover {
+  background: var(--color-transparent-dark-10);
 }
 
-.btn.third-destructive.light:hover,
-.btn.third-destructive.light:focus {
-  background-color: var(--color-neutral-alpha-light-10);
+.warning  .btn.ghost        { color: var(--color-transparent-dark-80); }
+.warning  .btn.ghost:hover  { background: var(--color-transparent-dark-10); }
+
+/* CTA */
+
+.btn.cta {
+  background: var(--color-brand-main-500);
+  color: var(--color-neutral-100);
+  border-color: rgba(0, 0, 0, 0);
+  box-shadow: 0px 12px 48px -16px var(--color-brand-main-500);
+  transition: 300ms ease all;
 }
+
+.btn.cta:hover, .btn.cta:focus {
+  background-color: var(--color-brand-main-600);
+  box-shadow: 0px 12px 48px -12px var(--color-brand-main-500);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+/* Tools */
+
+.btn.tool{
+  padding: var(--base-size-050) var(--base-size-100);
+  font-size: 12px;
+}
+
+.light .btn.tool{
+  background: var(--color-transparent-dark-10);
+  color: var(--color-neutral-900);
+  padding: var(--base-size-050) var(--base-size-100);
+}
+
+.dark .btn.tool{
+  background: var(--color-transparent-light-10);
+  color: var(--color-neutral-100);
+  padding: var(--base-size-050) var(--base-size-100);
+}
+
+.light .btn.tool:hover{
+  background: var(--color-transparent-dark-20);
+}
+
+.dark .btn.tool:hover{
+  background: var(--color-transparent-light-20);
+}
+
+
+/* Square buttons */
 
 .btn.sqr {
   border-radius: 16px;
@@ -1091,6 +1299,35 @@ a.btn {
   text-decoration: none;
 }
 
+/* == Chirp == */
+/* Label for use in cards. */
+
+.chirp {
+  padding: var(--base-size-8) var(--base-size-12);
+  font-size: var(--base-size-16);
+  border-radius: var(--radius-192);
+  display: flex;
+  gap: var(--base-size-8);
+  padding: var(--base-size-025) var(--base-size-075);
+  border-radius: var(--card-radius);
+  /* Standard backdrop-filter */
+  backdrop-filter: blur(16px);
+  /* Safari-specific -webkit-backdrop-filter */
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.light .chirp {
+  background: var(--color-transparent-dark-10);
+  color: var(--color-transparent-dark-80);
+}
+
+.dark .chirp {
+  background: var(--color-transparent-light-20);
+  color: var(--color-transparent-light-80);
+}
+
+
+
 /* ==================================== controls ==================================== */
 /* SECTION DESCRIPTION HERE */
 
@@ -1107,27 +1344,7 @@ select.light {
   border: 1px solid var(--color-neutral-alpha-light-10);
 }
 
-.chirp {
-  padding: var(--base-size-8) var(--base-size-12);
-  font-size: var(--base-size-16);
-  border-radius: var(--radius-192);
-  align-self: flex-start;
-  display: flex;
-  gap: var(--base-size-8);
-  align-items: center;
-}
 
-.chirp.light {
-  border: 1px solid var(--color-neutral-alpha-light-20);
-  background: var(--color-neutral-alpha-light-10);
-  color: var(--color-neutral-solid-00);
-}
-
-.chirp.dark {
-  border: 1px solid var(--color-neutral-alpha-dark-20);
-  background: var(--color-neutral-alpha-dark-10);
-  color: var(--color-neutral-solid-100);
-}
 
 .chirp.shinny {
   border: 1px solid var(--color-neutral-alpha-light-20);
@@ -1237,8 +1454,8 @@ input[type="radio"] {
   border-color: var(--color-neutral-alpha-light-10);
 }
 
-/* ==================================== navigation ==================================== */
-/* SECTION DESCRIPTION HERE */
+/* == Navigation == */
+/* These classes let you use the most impotant navigation tools */
 
 /* Navigation bar */
 
@@ -1378,6 +1595,10 @@ aside{
     position: fixed;
     bottom: 0px;
     border-top: 1px solid var(--color-transparent-light-10);
+    z-index: 100;
+    background: var(--color-transparent-dark-80);
+    backdrop-filter: blur(64px);
+    -webkit-backdrop-filter: blur(64px);
   }
 
   .sidebar{
@@ -1424,6 +1645,23 @@ aside{
   #my-courses{
     display: none;
   }
+}
+
+/* Toolbar */
+
+.toolbar{
+  padding: var(--base-size-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toolbar.main{
+  background: red;
+}
+
+.card .toolbar{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.00) 100%);
 }
 
 /* Footer */
@@ -1560,6 +1798,7 @@ header.dark {
 .dash-container{
   padding-top: var(--base-size-400);
   display: flex;
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 400px) {
@@ -1570,7 +1809,7 @@ header.dark {
 }
 
 .container {
-  width: 92%;
+  width: 96%;
   max-width: 1280px;
   box-sizing: border-box;
   margin-left: auto;
@@ -1598,20 +1837,41 @@ header.dark {
   overflow: auto;
 }
 
-/* ==================================== cards ==================================== */
+/* == Titles == */
 /* SECTION DESCRIPTION HERE */
 
-.card{
+.section-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 0px var(--base-size-125);
+  text-shadow: 0px 0px 16px var(--color-transparent-dark-80);
+}
+
+@media screen and (max-width: 900px) {
+  .section-title{
+    padding: 0px var(--base-size-025);
+  }
+}
+
+/* == Basic cards == */
+/* This classes let you build basic cards, you can use them in conjuction with the Basic Styles classes to personalize them according to their function */
+
+.card {
   border-radius: var(--radius-card, 24px);
   border: 1px solid var(--color-transparent-light-20);
-  display: flex;
-  flex-direction: column;
-  gap: var(--base-size-16);
   overflow: hidden;
+  box-shadow: var(--shadow-elevation-8);
 }
 
 .card.padded, .card .padded{
   padding: var(--card-padding);
+}
+
+.card .actions{
+  display: flex;
+  gap: var(--base-size-100);
 }
 
 .card .title{
@@ -1620,249 +1880,8 @@ header.dark {
   gap: 0px;
 }
 
-.card .actions{
-  display: flex;
-  gap: var(--base-size-16);
-}
-
-/* Base card styles */
-
-.card.dark{
-  background: var(--color-neutral-900);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-light-20);
-}
-
-.card.dark .text-secondary{
-  color: var(--color-transparent-light-60);
-}
-
-.card.dark .btn.second{
-  border: 1px solid var(--color-transparent-light-20);
-  color: var(--color-neutral-100);
-}
-
-.card.dark .btn.second:hover{
-  background: var(--color-transparent-light-10);
-}
-
-.card.light{
-  background: var(--color-neutral-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-20);
-}
-
-.card.light .text-secondary{
-  color: var(--color-transparent-dark-60);
-}
-
-/* Branded card styles */
-
-/* Main */
-
-.card.dark.brand-main{
-  background: var(--color-brand-main-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.brand-main{
-  background: var(--color-brand-main-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.brand-main h1,
-.card.light.brand-main h2,
-.card.light.brand-main h3,
-.card.light.brand-main h4,
-.card.light.brand-main h5,
-.card.light.brand-main h6 {
-  color: var(--color-brand-main-500);
-}
-
-.card.brand-main .btn.main{
-  background: var(--color-brand-main-500);
-}
-
-/* Accent */
-
-.card.dark.brand-accent{
-  background: var(--color-brand-accent-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.brand-accent{
-  background: var(--color-brand-accent-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.brand-accent h1,
-.card.light.brand-accent h2,
-.card.light.brand-accent h3,
-.card.light.brand-accent h4,
-.card.light.brand-accent h5,
-.card.light.brand-accent h6 {
-  color: var(--color-brand-accent-500);
-}
-
-.card.brand-accent .btn.main{
-  background: var(--color-brand-accent-500);
-}
-
-
-/* Auxiliar */
-
-.card.dark.brand-aux{
-  background: var(--color-brand-aux-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.brand-aux{
-  background: var(--color-brand-aux-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.brand-aux h1,
-.card.light.brand-aux h2,
-.card.light.brand-aux h3,
-.card.light.brand-aux h4,
-.card.light.brand-aux h5,
-.card.light.brand-aux h6 {
-  color: var(--color-brand-aux-600);
-}
-
-.card.brand-aux .btn.main{
-  background: var(--color-brand-aux-400);
-  color: var(--color-brand-aux-800);
-}
-
-/* Contextual card styles */
-
-/* Success */
-
-.card.dark.success{
-  background: var(--color-context-success-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.success{
-  background: var(--color-context-success-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.success h1,
-.card.light.success h2,
-.card.light.success h3,
-.card.light.success h4,
-.card.light.success h5,
-.card.light.success h6 {
-  color: var(--color-context-success-600);
-}
-
-.card.success .btn.main{
-  background: var(--color-context-success-600);
-}
-
-/* Warning */
-
-.card.dark.warning{
-  background: var(--color-context-warning-500);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.dark.warning .text-secondary{
-  color: var(--color-transparent-dark-40)
-}
-
-.card.light.warning{
-  background: var(--color-context-warning-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.warning h1,
-.card.light.warning h2,
-.card.light.warning h3,
-.card.light.warning h4,
-.card.light.warning h5,
-.card.light.warning h6 {
-  color: var(--color-context-warning-700);
-}
-
-.card.warning .btn.main{
-  background: var(--color-context-warning-200);
-  color: var(--color-context-warning-900);
-}
-
-/* Danger */
-
-.card.dark.danger{
-  background: var(--color-context-danger-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.danger{
-  background: var(--color-context-danger-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.danger h1,
-.card.light.danger h2,
-.card.light.danger h3,
-.card.light.danger h4,
-.card.light.danger h5,
-.card.light.danger h6 {
-  color: var(--color-context-danger-500);
-}
-
-.card.danger .btn.main{
-  background: var(--color-context-danger-500);
-  color: var(--color-context-danger-100);
-}
-
-/* Info */
-
-.card.dark.info{
-  background: var(--color-context-info-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.info{
-  background: var(--color-context-info-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.card.light.info h1,
-.card.light.info h2,
-.card.light.info h3,
-.card.light.info h4,
-.card.light.info h5,
-.card.light.info h6 {
-  color: var(--color-context-info-500);
-}
-
-.card.info .btn.main{
-  background: var(--color-context-info-500);
-}
-
-
-
-
-.section-title {
-  text-align: center;
-}
+/* ==================================== cards ==================================== */
+/* SECTION DESCRIPTION HERE */
 
 .stretch {
   flex: 1;
@@ -2035,35 +2054,6 @@ header.dark {
 /* ==================================== effects ==================================== */
 /* SECTION DESCRIPTION HERE */
 
-.glow-on-hover {
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  position: relative;
-}
-.glow-on-hover:hover {
-  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.7);
-  transform: translateY(-3px);
-}
-.glow-on-hover:after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  background: radial-gradient(
-    100% 100% at 50% 0%,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transition: opacity 0.2s ease-in-out;
-}
-.glow-on-hover:hover:after {
-  opacity: 1;
-}
 
 .gradient-div-2 {
   background: linear-gradient(132deg, #eb00ff 0%, #ffb800 100%);
@@ -2079,6 +2069,25 @@ header.dark {
     background-position: 100% 50%;
   }
 }
+
+
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+
 
 /* ======================================================================== */
 /* ==================================== local styles ==================================== */
@@ -2199,3 +2208,341 @@ header.dark {
     border: 1px solid rgb(37, 37, 37);
   }
 }
+
+
+/* == Templates == */
+/* SECTION DESCRIPTION HERE */
+
+/* Master course information */
+
+.master{
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.master.dark{
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: var(--color-transparent-dark-20);
+}
+
+.master.light{
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: var(--color-transparent-light-80);
+}
+
+.master .header {
+  padding: var(--base-size-600) var(--base-size-800);
+  text-align: center;
+}
+
+.master .header h1 {
+  font-style: italic;
+}
+
+.master .dock {
+  padding: var(--base-size-150);
+  background:var(--color-transparent-light-10);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  gap: var(--base-size-150);
+  border-radius: var(--base-size-150);
+}
+
+.shortcut { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--base-size-150);
+  border-radius: var(--base-size-100);
+  min-height: 160px;
+  transition: transform 0.2s;
+}
+
+.shortcut:hover {
+  transform: translateY(-4px); /* Move the element 10 pixels to the right on hover */
+}
+
+.shortcut.main {
+  background: var(--color-neutral-100);
+}
+
+.light .shortcut {
+  background: var(--color-transparent-dark-10);
+}
+
+.dark .shortcut {
+  background: var(--color-transparent-light-10);
+}
+
+.dark .shortcut.main {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+}
+
+.master.code h1 { 
+  background: var(--gradient-fancy, radial-gradient(277.44% 142.2% at 0% 0%, #C215FF 0%, #01B7B7 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .course {
+  background: red;
+} */
+
+.course .header{
+  padding: 0px var(--base-size-150);
+}
+
+
+@media screen and (max-width: 900px) {
+  .master .header {
+    padding: var(--base-size-200) var(--base-size-150);
+  }
+}
+
+/* == Rings == */
+
+.dials {
+  animation: show-dials 5s infinite ease-out;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.75em;
+  left: 0;
+}
+
+.dial {
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+/**** DIAL 1 ****/
+.dial.move {
+  position: absolute;
+  width: 8em;
+  height: 8em;
+
+  &::before {
+    background: url(https://cssanimation.rocks/assets/images/posts/watch/1.png) no-repeat center;
+    background-size: 50%;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: -0.29em;
+    left: calc(50% - 0.75em);
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    background: #000;
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+
+  .dial-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4em;
+    overflow: hidden;
+  }
+  .wedge {
+    width: 4em;
+    height: 8em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .container1 {
+    left: 4em;
+  }
+  .container1 .wedge {
+    animation: rotate-bg-dial-1-1 5s 0.2s linear infinite;
+    border-radius: 8em 0 0 8em;
+    background: #fc1d20;
+    left: -4em;
+    transform-origin: 100% 50%;
+  }
+
+  .container2 {
+    left: 0;
+  }
+  .container2 .wedge {
+    animation: rotate-bg-dial-1-2 5s 0.2s linear infinite;
+    background: #fc1d20;
+    border-radius: 0 8em 8em 0;
+    transform-origin: 0 50%;
+    left: 4em;
+  }
+
+  .marker {
+    width: 1em;
+    height: 1em;
+    background: #fc1d20;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 0.5em);
+  }
+  .end {
+    animation: rotate-marker-dial-1 5s 0.2s linear infinite;
+    transform-origin: 50% 4em;
+  }
+}
+
+/**** DIAL 2 ****/
+.dial.exercise {
+  position: absolute;
+  width: 6em;
+  height: 6em;
+  top: 1em;
+  left: 1em;
+
+  &::before {
+    background: url(https://cssanimation.rocks/assets/images/posts/watch/2.png) no-repeat center;
+    background-size: 50%;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: -0.29em;
+    left: calc(50% - 0.75em);
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    background: #000;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+
+  .dial-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3em;
+    overflow: hidden;
+  }
+  .wedge {
+    border-radius: 50%;
+    width: 3em;
+    height: 6em;
+    position: absolute;
+  }
+  .container1 {
+    left: 3em;
+  }
+  .container1 {
+    .wedge {
+      animation: rotate-bg-dial-2-1 5s .5s linear infinite;
+      border-radius: 8em 0 0 8em;
+      position: absolute;
+      background: #9cfc33;
+      left: -3em;
+      transform-origin: 100% 50%;
+    }
+  }
+
+  .marker {
+    width: 1em;
+    height: 1em;
+    background: #9cfc33;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 0.48em);
+  }
+  .end {
+    animation: rotate-marker-dial-2 5s .5s linear infinite;
+    transform-origin: 45% 3em;
+  }
+}
+
+/**** DIAL 3 ****/
+.dial.stand {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  top: 2em;
+  left: 2em;
+
+  &::before {
+    background: url(https://cssanimation.rocks/assets/images/posts/watch/3.png) no-repeat center;
+    background-size: 50%;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: -0.28em;
+    left: calc(50% - 0.75em);
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    background: #000;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+
+  .dial-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4em;
+    overflow: hidden;
+  }
+  .wedge {
+    border-radius: 50%;
+    width: 2em;
+    height: 4em;
+    position: absolute;
+  }
+  .container1 {
+    left: 2em;
+  }
+  .container1 {
+    .wedge {
+      position: absolute;
+      animation: rotate-bg-dial-3-1 5s 0.5s linear infinite;
+      background: #32cbd4;
+      border-radius: 8em 0 0 8em;
+      left: -2em;
+      transform-origin: 100% 50%;
+    }
+  }
+  .marker {
+    width: 1em;
+    height: 1em;
+    background: #32cbd4;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 0.5em);
+  }
+  .end {
+    animation: rotate-marker-dial-3 5s 0.5s linear infinite;
+    transform-origin: 50% 2em;
+  }
+}
+
