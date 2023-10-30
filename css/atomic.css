@@ -240,7 +240,7 @@
 }
 
 ::selection {
-  background-color: #fe9920; /* set the background color of the selected text */
+  background-color: #DBFF76; /* set the background color of the selected text */
   color: #000; /* set the text color of the selected text */
   text-shadow: none; /* remove any text shadow on the selected text */
 }
@@ -1236,6 +1236,9 @@ a.btn {
 .btn.tool{
   padding: var(--base-size-050) var(--base-size-100);
   font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .light .btn.tool{
@@ -1331,7 +1334,7 @@ a.btn {
 /* ==================================== controls ==================================== */
 /* SECTION DESCRIPTION HERE */
 
-select {
+/* select {
   padding: 11px 1rem;
   border-radius: var(--radius-2);
   outline: none;
@@ -1342,6 +1345,34 @@ select.light {
   background: var(--color-neutral-alpha-light-10);
   color: var(--color-neutral-solid-00);
   border: 1px solid var(--color-neutral-alpha-light-10);
+} */
+
+
+textarea, select, input, button { outline: none; -webkit-appearance: none; }
+
+select {
+  border-radius: var(--button-radius);
+  padding: var(--base-size-075) var(--base-size-100);
+  padding-right: var(--base-size-300);
+  border: 1px solid;
+}
+
+select, .dark select{
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-light-10);
+  background: var(--color-transparent-light-10);
+  background-image: url('../img/chevron-white.png');
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
+}
+
+.light select{
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+  background: var(--color-transparent-dark-10);
+  background-image: url('../img/chevron-black.png');
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
 }
 
 
@@ -1462,7 +1493,7 @@ select.light {
 nav {
   position: fixed;
   width: 100%;
-  padding: var(--base-size-075) var(--base-size-150);
+  padding: var(--base-size-050) var(--base-size-150);
   box-sizing: border-box;
   background: var(--color-neutral-800);
   border-bottom: 1px solid var(--color-transparent-light-10);
@@ -1509,7 +1540,7 @@ nav .mobile .bar img {
   height: 100vh;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   nav {
     padding: var(--base-size-075) var(--base-size-050);
   }
@@ -1585,7 +1616,7 @@ aside{
   }
 }
 
-@media screen and (max-width: 700px) { 
+@media screen and (max-width: 720px) { 
   .main-container{
     padding-bottom: var(--base-size-1000);
   }
@@ -1650,21 +1681,82 @@ aside{
 /* Toolbar */
 
 .toolbar{
-  padding: var(--base-size-100);
+  padding: var(--base-size-075) var(--base-size-100);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.toolbar.main{
-  background: var(--color-brand-main-800);
+.toolbar.main, .toolbar.view-title{
+  background: var(--color-brand-main-900);
   z-index: 50;
   position: sticky;
   top: 0px;
 }
 
+.toolbar .tab-group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--base-size-050);
+}
+
+.toolbar .tab{
+  border-radius: var(--card-radius);
+  padding: var(--base-size-050) var(--base-size-100);
+  border: none;
+  background: var(--color-transparent-light-10);
+  color: white;
+}
+
+.toolbar .tab:hover{
+  background: var(--color-transparent-light-20);
+}
+
+.toolbar .tab.selected{
+  background: var(--color-neutral-100);
+  color: var(--color-brand-main-800);
+}
+
+.toolbar .tab.selected:hover{
+  background: var(--color-neutral-100);
+  color: var(--color-brand-main-800);
+}
+
+.toolbar input[type=text], .toolbar input[type=number] {
+  background: var(--color-transparent-light-10);
+  border: 1px solid var(--color-transparent-light-20);
+}
+
+.search{
+  background: red;
+}
+
 .card .toolbar{
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.00) 100%);
+}
+
+@media screen and (max-width: 720px) {
+  .toolbar.main { 
+    flex-direction: column;
+    gap: var(--base-size-100);
+    padding: var(--base-size-100);
+  }
+
+  .toolbar.view-title{
+    padding: var(--base-size-125) var(--base-size-100);
+  }
+
+  .toolbar.view-title h6{
+    text-overflow: ellipsis;
+  }
+
+  .toolbar.main div{
+    width: 100%;
+  }
+
+  .toolbar > input, .toolbar select { 
+    width: 100%;
+  }
 }
 
 /* Footer */
@@ -1799,7 +1891,7 @@ header.dark {
 }
 
 .dash-container{
-  padding-top: 70px;
+  padding-top: 62px;
   display: flex;
   min-height: 100vh;
 }
@@ -1960,7 +2052,7 @@ header.dark {
   width: 100%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   .hero .cta {
     flex-direction: column;
   }
