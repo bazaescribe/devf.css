@@ -1,0 +1,10 @@
+:root {
+    --primary: yellow;
+
+    --background-test: var(--primary);
+}
+
+
+.test-bg{
+    background: var(--background-test);
+}

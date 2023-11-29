@@ -11,7 +11,6 @@
     Font color
   Padding
   Flexbox
-  Grid
   Buttons
   Form controls
   Navigation
@@ -28,8 +27,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap");
 
-/* ==================================== ROOT ==================================== */
-/* Define variables here */
+
+/* ==================================== Variables ==================================== */
+/* This section defines the root styles and variables for the atomic CSS file. */
 
 :root {
 
@@ -113,8 +113,8 @@
   --color-context-info-900: #000533;
 
   /* Neutral */
-  --color-neutral-100: #F2F2F2;
-  --color-neutral-200: #B9BAC7;
+  --color-neutral-100: #fbfbfb;
+  --color-neutral-200: #f6f8fa;
   --color-neutral-300: #828499;
   --color-neutral-400: #56586E;
   --color-neutral-500: #2D2F41;
@@ -150,35 +150,34 @@
   --color-neutral-solid-90: #0a0d0f;
   --color-neutral-solid-100: #000000;
 
+  /* Education colors */
+
+  --color-edu-classes: #FFC107;
+  --color-edu-content: #FF5722;
+  --color-edu-projects: #673AB7;
+
+  /* Other colors */
+  --color-corporate-facebook: #1877F2;
+  --color-corporate-google: #DB4437;
+  --color-corporate-twitter: #1DA1F2;
+  --color-corporate-instagram: #C13584;
+  --color-corporate-discord: #5865F2;
 
   /*** Shadows ***/
 
-  --shadow-elevation-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); /* Elevación 1 */
-  --shadow-elevation-2: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2); /* Elevación 2 */
-  --shadow-elevation-3: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); /* Elevación 3 */
-  --shadow-elevation-4: 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); /* Elevación 4 */
-  --shadow-elevation-6: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); /* Elevación 6 */
-  --shadow-elevation-8: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2); /* Elevación 8 */
-  --shadow-elevation-12: 0 12px 16px 1px rgba(0, 0, 0, 0.14), 0 4px 22px 3px rgba(0, 0, 0, 0.12), 0 6px 7px -4px rgba(0, 0, 0, 0.2); /* Elevación 12 */
-  --shadow-elevation-16: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); /* Elevación 16 */
-
-  /*** Color Tokens ***/
-
-  --color-aux-a: #00a3ff;
-  --color-aux-b: #d1f2a6;
-  --color-aux-c: #ffc2d9;
-  --color-aux-d: #6663ff;
-  --color-aux-e: #f2caa6;
+  --shadow-elevation-1:   0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); /* Elevación 1 */
+  --shadow-elevation-2:   0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2); /* Elevación 2 */
+  --shadow-elevation-3:   0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); /* Elevación 3 */
+  --shadow-elevation-4:   0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); /* Elevación 4 */
+  --shadow-elevation-6:   0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); /* Elevación 6 */
+  --shadow-elevation-8:   0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2); /* Elevación 8 */
+  --shadow-elevation-12:  0px 12px 16px 1px rgba(0, 0, 0, 0.14), 0 4px 22px 3px rgba(0, 0, 0, 0.12), 0 6px 7px -4px rgba(0, 0, 0, 0.2); /* Elevación 12 */
+  --shadow-elevation-16:  0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); /* Elevación 16 */
 
   --gradient-light-1: linear-gradient(-20deg, #ace0f9 0%, #fff1eb 100%);
   --gradient-light-2: linear-gradient(-20deg, #f6f3ff 0%, #cd9cf2 1000%);
   --gradient-light-3: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  --gradient-light-4: linear-gradient(
-    to top,
-    #dad4ec 0%,
-    #dad4ec 1%,
-    #f3e7e9 100%
-  );
+  --gradient-light-4: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
   --gradient-light-5: linear-gradient(-90deg, #c1dfc4 0%, #deecdd 100%);
   --gradient-light-6: linear-gradient(to top, #dfe9f3 0%, white 100%);
   --gradient-light-7: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
@@ -199,13 +198,6 @@
   --gradient-v-4: linear-gradient(to bottom, #b721ff, #ffd302);
   --gradient-v-5: linear-gradient(to bottom, #1b998b, #00b4d8);
 
-  --gradient-background-light: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #efeff5 100%
-  );
-  --gradient-background-dark: linear-gradient(180deg, #3b3f4b 0%, #262831 100%);
-
   --base-size-025: 0.25rem;
   --base-size-050: 0.5rem;
   --base-size-075: 0.75rem;
@@ -222,21 +214,85 @@
   --base-size-900: 9rem;
   --base-size-1000: 10rem;
   --base-size-2000: 20rem;
+}
 
-  /*** Breakpoints ***/
+/* ==================================== Tokens ==================================== */
+/* This section defines the tokenized values used in the application. */
 
-  --breakpoint-phone: 576px;   /* Phone */
-  --breakpoint-tablet: 768px;  /* Tablet */
-  --breakpoint-desktop: 992px; /* Desktop */
+:root{
+    /* Radius tokens */
+    --button-radius: var(--base-size-300);
+    --card-radius: var(--base-size-150);
+  
+    /* Padding tokens */
+    --button-padding: var(--base-size-050) var(--base-size-100);
+    --button-padding-compact: var(--base-size-100) var(--base-size-075);
+    --card-padding: var(--base-size-150);
+  
+    /* Background Tokens */
+    --token-bg-main: var(--color-neutral-900);
+    --token-bg-secondary: var(--color-neutral-800);
+    --token-bg-contrast: var(--color-neutral-100);
+    --token-bg-subtle: var(--color-transparent-light-10);
+    --token-bg-main-transparent: var(--color-transparent-dark-80);
+  
+    /* Content Tokens */
+    --token-content-main: var(--color-neutral-100);
+    --token-content-secondary: var(--color-transparent-light-60);
+  
+    /* Border Tokens */
+    --token-border: var(--color-transparent-light-10);
+    --token-border-hover: var(--color-transparent-light-20);
+  
+    /* Main Button Tokens */
+    --token-btn-main-bg: var(--color-neutral-100);
+    --token-btn-main-content: var(--color-neutral-900);
+    --token-btn-main-hover: var(--color-neutral-200);
 
-  /*** Tokens ***/
+    /* Secondary Button Tokens */
+    --token-btn-secondary-bg: var(--color-transparent-light-10);
+    --token-btn-secondary-content: var(--color-neutral-100);
+    --token-btn-secondary-hover: var(--color-transparent-light-20);
 
-  --button-radius: var(--base-size-075);
-  --button-padding: var(--base-size-075) var(--base-size-100);
-  --button-padding-compact: var(--base-size-100) var(--base-size-075);
+    /* Ghost Button Tokens */
+    --token-btn-ghost-bg: none;
+    --token-btn-ghost-content: var(--color-neutral-100);
+    --token-btn-ghost-hover: var(--color-transparent-light-10);
+}
 
-  --card-radius: var(--base-size-150);
-  --card-padding: var(--base-size-150)
+/* Variables para light mode */
+@media (prefers-color-scheme: light) {
+  :root {    
+    /* Background Tokens */
+    --token-bg-main: var(--color-neutral-100);
+    --token-bg-secondary: var(--color-neutral-200);
+    --token-bg-contrast: var(--color-neutral-900);
+    --token-bg-subtle: var(--color-transparent-dark-10);
+    --token-bg-main-transparent: var(--color-transparent-light-80);
+  
+    /* Content Tokens */
+    --token-content-main: var(--color-neutral-900);
+    --token-content-secondary: var(--color-transparent-dark-60);
+  
+    /* Border Tokens */
+    --token-border: var(--color-transparent-dark-10);
+    --token-border-hover: var(--color-transparent-dark-20);
+  
+    /* Main Button Tokens */
+    --token-btn-main-bg: var(--color-neutral-900);
+    --token-btn-main-content: var(--color-neutral-100);
+    --token-btn-main-hover: var(--color-neutral-800);
+
+    /* Secondary Button Tokens */
+    --token-btn-secondary-bg: var(--color-transparent-dark-10);
+    --token-btn-secondary-content: var(--color-neutral-900);
+    --token-btn-secondary-hover: var(--color-transparent-dark-20);
+
+    /* Ghost Button Tokens */
+    --token-btn-ghost-bg: none;
+    --token-btn-ghost-content: var(--color-neutral-900);
+    --token-btn-ghost-hover: var(--color-transparent-dark-10);
+  }
 }
 
 ::selection {
@@ -248,29 +304,28 @@
 /* ==================================== HTML ==================================== */
 /* Default styles for the HTML element */
 
-html,
-body {
+html, body {
   padding: 0px;
   margin: 0px;
   font-family: "Roboto", sans-serif;
-  background: var(--color-neutral-900);
-  color: var(--color-neutral-solid-00);
+  background: var(--token-bg-main);
+  color: var(--token-content-main);
 }
 
 body {
   overflow: initial !important;
 }
 
-/* ==================================== text ==================================== */
+/* ==================================== Text formating ==================================== */
 /* Text size and transformation */
 
 /* Header text setup */
-
 h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
   font-family: "Poppins", "Roboto", sans-serif;
 }
 
+/* header sizing */
 h1 { font-size: 6rem; font-weight: 700; }
 h2 { font-size: 4em; font-weight: 700; }
 h3 { font-size: 3rem; font-weight: 700; }
@@ -278,6 +333,7 @@ h4 { font-size: 2rem; font-weight: 700; }
 h5 { font-size: 1.5rem; font-weight: 700; }
 h6 { font-size: 1.125rem; font-weight: 700; }
 
+/* header sizing for mobile */
 @media (max-width: 768px) {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
@@ -287,24 +343,13 @@ h6 { font-size: 1.125rem; font-weight: 700; }
   h6 { font-size: 1rem; }
 }
 
-/* @media screen and (max-width: var(--breakpoint-sm)) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.75rem; }
-  h4 { font-size: 1.5rem; }
-  h5 { font-size: 1.25rem; }
-  h6 { font-size: 1rem; }
-} */
-
 /* Content text setup */
-
 .quote { font-size: 1.25rem; font-family: "Roboto Slab"; }
 .caption { font-size: 0.875rem; }
 .small { font-size: 0.75rem; }
 .overline { font-size: 0.625rem; }
 
 /* Text align */
-
 .text-align-right { text-align: right; }
 .text-align-left { text-align: left; }
 .text-align-center { text-align: center; }
@@ -312,7 +357,6 @@ h6 { font-size: 1.125rem; font-weight: 700; }
 .text-align-justify { text-align: justify; }
 
 /* Text format */
-
 .text-bold { font-weight: bold; }
 .text-italic { font-style: italic; }
 
@@ -342,69 +386,68 @@ li {
   fill: none;
 }
 
-/* ==================================== background ==================================== */
-/* SECTION DESCRIPTION HERE */
+/* ==================================== Background ==================================== */
+/* This section defines the background colors used in the application. */
 
-.bg-primary { background-color: var(--color-brand-main-500); }
-.bg-secondary { background-color: var(--color-brand-main-700); }
-.bg-white { background-color: var(--color-neutral-solid-00); }
-.bg-light { background-color: var(--color-neutral-solid-10); }
-.bg-dark { background-color: var(--color-neutral-solid-100); }
-.bg-light-main { background-color: var(--color-neutral-solid-00); }
-.bg-light-secondary { background-color: var(--color-neutral-solid-20); }
-.bg-dark-main { background-color: var(--color-neutral-solid-90); }
-.bg-dark-secondary { background-color: var(--color-neutral-solid-80); }
+/* Background colors */
+.bg-dark            { background-color: var(--color-neutral-900); }
+.bg-dark-secondary  { background-color: var(--color-neutral-800); }
+.bg-light           { background-color: var(--color-neutral-100); }
+.bg-light-secondary { background-color: var(--color-neutral-200); }
 
-.bg-aux-a { background-color: var(--color-aux-a); }
-.bg-aux-b { background-color: var(--color-aux-b); }
-.bg-aux-c { background-color: var(--color-aux-c); }
-.bg-aux-d { background-color: var(--color-aux-d); }
-.bg-aux-e { background-color: var(--color-aux-e); }
+/* Brand main */
+.bg-brand-main        { background-color: var(--color-brand-main-500); }
+.bg-brand-main-dark   { background-color: var(--color-brand-main-900); }
+.bg-brand-main-light  { background-color: var(--color-brand-main-100); }
 
-.bg-school-coding { background-color: var(--color-school-coding); }
-.bg-school-data { background-color: var(--color-school-data); }
-.bg-school-design { background-color: var(--color-school-design); }
+/* Brand accent */
+.bg-brand-accent        { background-color: var(--color-brand-accent-500); }
+.bg-brand-accent-dark   { background-color: var(--color-brand-accent-900); }
+.bg-brand-accent-light  { background-color: var(--color-brand-accent-100); }
 
-.bg-gradient-light-1 { background-image: var(--gradient-light-1) !important; }
-.bg-gradient-light-2 { background-image: var(--gradient-light-2) !important; }
-.bg-gradient-light-3 { background-image: var(--gradient-light-3) !important; }
-.bg-gradient-light-4 { background-image: var(--gradient-light-4) !important; }
-.bg-gradient-light-5 { background-image: var(--gradient-light-5) !important; }
-.bg-gradient-light-6 { background-image: var(--gradient-light-6) !important; }
-.bg-gradient-light-7 { background-image: var(--gradient-light-7) !important; }
-.bg-gradient-light-8 { background-image: var(--gradient-light-8) !important; }
+/* Brand aux */
+.bg-brand-aux       { background-color: var(--color-brand-aux-500); }
+.bg-brand-aux-dark  { background-color: var(--color-brand-aux-900); }
+.bg-brand-aux-light { background-color: var(--color-brand-aux-100); }
 
-.bg-gradient-dark-1 { background-image: var(--gradient-dark-1) !important; }
-.bg-gradient-dark-2 { background-image: var(--gradient-dark-2) !important; }
-.bg-gradient-dark-3 { background-image: var(--gradient-dark-3) !important; }
-.bg-gradient-dark-4 { background-image: var(--gradient-dark-4) !important; }
-.bg-gradient-dark-5 { background-image: var(--gradient-dark-5) !important; }
-.bg-gradient-dark-6 { background-image: var(--gradient-dark-6) !important; }
-.bg-gradient-dark-7 { background-image: var(--gradient-dark-7) !important; }
-.bg-gradient-dark-8 { background-image: var(--gradient-dark-8) !important; }
+/* Status success */
+.bg-status-success       { background-color: var(--color-status-success-500); }
+.bg-status-success-dark  { background-color: var(--color-status-success-900); }
+.bg-status-success-light { background-color: var(--color-status-success-100); }
 
-.bg-gradient-v-1 { background-image: var(--gradient-v-1); }
-.bg-gradient-v-2 { background-image: var(--gradient-v-2); }
-.bg-gradient-v-3 { background-image: var(--gradient-v-3); }
-.bg-gradient-v-4 { background-image: var(--gradient-v-4); }
-.bg-gradient-v-5 { background-image: var(--gradient-v-5); }
+/* Status warning */
+.bg-status-warning       { background-color: var(--color-status-warning-500); }
+.bg-status-warning-dark  { background-color: var(--color-status-warning-900); }
+.bg-status-warning-light { background-color: var(--color-status-warning-100); }
 
-.bg-gradient-light { background-image: var(--gradient-background-light); }
-.bg-alpha-light { background: var(--color-neutral-alpha-light-20); }
-.bg-alpha-dark { background: var(--color-neutral-alpha-dark-20); }
-.transition { background: linear-gradient(180deg, var(--color1) 49.48%, #ffffff 49.49%); }
-.transition-light { --color1: var(--color-neutral-solid-10); }
-.transition-dark { --color1: var(--color-neutral-solid-80); }
+/* Status danger */
+.bg-status-danger       { background-color: var(--color-status-danger-500); }
+.bg-status-danger-dark  { background-color: var(--color-status-danger-900); }
+.bg-status-danger-light { background-color: var(--color-status-danger-100); }
 
-.bg-homepage{
-  background: linear-gradient(180deg, rgba(13, 16, 38, 0.8) 0%, #00010D 60.47%), url('../img/mosaic.png'), lightgray 50%;
-  background-repeat: repeat;
-}
+/* Status info */
+.bg-status-info       { background-color: var(--color-status-info-500); }
+.bg-status-info-dark  { background-color: var(--color-status-info-900); }
+.bg-status-info-light { background-color: var(--color-status-info-100); }
 
-/* .bg-homepage {
-  background: linear-gradient(180deg, rgba(13, 16, 38, 0.44) 0%, #00010D 60.47%), linear-gradient(90deg, #d151ff 0%, #31FFE6 100%);
-  animation: gradientAnimation 10s infinite linear; /* Adjust the duration as needed 
-} */
+/* Edu */
+.bg-edu-classes  { background-color: var(--color-edu-classes); }
+.bg-edu-content  { background-color: var(--color-edu-content); }
+.bg-edu-projects { background-color: var(--color-edu-projects); }
+
+/* Corporate */
+.bg-corporate-facebook  { background-color: var(--color-corporate-facebook) !important; }
+.bg-corporate-google    { background-color: var(--color-corporate-google) !important; }
+.bg-corporate-twitter   { background-color: var(--color-corporate-twitter) !important; }
+.bg-corporate-instagram { background-color: var(--color-corporate-instagram) !important; }
+.bg-corporate-discord   { background-color: var(--color-corporate-discord) !important; }
+
+/* ==================================== Gradients ==================================== */
+
+.bg-master-code { background: radial-gradient(97.54% 94.12% at 0% 20.26%, rgba(0, 71, 255, 0.24) 0%, rgba(0, 71, 255, 0.24) 0.01%, rgba(0, 71, 255, 0.00) 100%), radial-gradient(141.9% 141.42% at 100% 0%, rgba(106, 15, 255, 0.40) 0%, rgba(105, 0, 95, 0.40) 100%); }
+
+/* ==================================== Animations ==================================== */
+/* This section contains CSS rules related to background styles and colors. It includes classes for different background colors, gradients, and animations. */
 
 @keyframes gradientAnimation {
   0% {
@@ -424,25 +467,56 @@ li {
   }
 }
 
+/* Animación de deslizamiento de un lado a otro */
+@keyframes animationSlide {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.bg-slide-animation {
+  animation: slideAnimation 10s infinite linear;
+}
+
+/* Animación de rotación suave */
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bg-rotate-animation {
+  animation: rotateAnimation 10s infinite linear;
+}
+
+/* ==================================== Border ==================================== */
+/* SECTION DESCRIPTION HERE */
+
+.border-glass { 
+  /* Define the gradient for the border */
+  border: 8px solid transparent; /* Make the border transparent */
+  border-image: linear-gradient(to right, #ff00cc, #3333ff); /* Define the gradient for the border */
+  border-image-slice: 1; /* Ensure the entire border is covered by the gradient */
+}
 
 /* ==================================== font color ==================================== */
 /* SECTION DESCRIPTION HERE */
 
-.text-main-light {
-  color: var(--color-neutral-solid-00);
-}
+.text-main-light { color: var(--color-neutral-solid-00); }
+.text-main-dark { color: var(--color-neutral-solid-100); }
+.text-secondary-light { color: var(--color-neutral-alpha-light-40); }
+.text-secondary-dark { color: var(--color-neutral-alpha-dark-40); }
 
-.text-main-dark {
-  color: var(--color-neutral-solid-100);
-}
+.text-secondary { color: var(--token-content-secondary); }
 
-.text-secondary-light {
-  color: var(--color-neutral-alpha-light-40);
-}
-
-.text-secondary-dark {
-  color: var(--color-neutral-alpha-dark-40);
-}
+.dark .text-secondary { color: var(--color-neutral-alpha-light-40); }
+.light .text-secondary { color: var(--color-neutral-alpha-dark-40); }
 
 .gradient-text {
   background: linear-gradient(45deg, #ff00cc, #3333ff);
@@ -712,21 +786,11 @@ li {
 
 /* Dynamic padding */
 
-.pd-s {
-  padding: var(--base-size-24);
-}
-.pd-m {
-  padding: var(--base-size-32);
-}
-.pd-l {
-  padding: var(--base-size-48);
-}
-.pd-xl {
-  padding: var(--base-size-64);
-}
-.pd-xxl {
-  padding: var(--base-size-80);
-}
+.pd-s { padding: var(--base-size-24); }
+.pd-m { padding: var(--base-size-32); }
+.pd-l { padding: var(--base-size-48); }
+.pd-xl { padding: var(--base-size-64); }
+.pd-xxl { padding: var(--base-size-80); }
 
 @media (max-width: 767px) {
   .pd-s {
@@ -766,12 +830,12 @@ li {
 
 /* Border Radius */
 
-.rounded-004 { border-radius: var(--base-size-4); }
-.rounded-008 { border-radius: var(--base-size-8); }
-.rounded-012 { border-radius: var(--base-size-12); }
-.rounded-016 { border-radius: var(--base-size-16); }
-.rounded-020 { border-radius: var(--base-size-20); }
-.rounded-024 { border-radius: var(--base-size-24); }
+.rounded-004 { border-radius: var(--base-size-025); }
+.rounded-008 { border-radius: var(--base-size-050); }
+.rounded-012 { border-radius: var(--base-size-075); }
+.rounded-016 { border-radius: var(--base-size-100); }
+.rounded-020 { border-radius: var(--base-size-125); }
+.rounded-024 { border-radius: var(--base-size-150); }
 .rounded-028 { border-radius: var(--base-size-28); }
 .rounded-032 { border-radius: var(--base-size-32); }
 .rounded-036 { border-radius: var(--base-size-36); }
@@ -860,30 +924,10 @@ li {
 .align-self-end { align-self: flex-end; }
 .align-self-stretch { align-self: stretch; }
 
+/* === Backgrounds === */
 
-/* == Grid == */
-/* These classes help you create and control grid layouts in CSS, providing flexibility and control over the arrangement of elements on a web page. */
-
-.d-grid { display: grid; }
-.grid-three-columns { grid-template-columns: 1fr 1fr 1fr; }
-.grid-two-columns { grid-template-columns: 1fr 1fr; }
-.grid-equal-rows { grid-auto-rows: 1fr; }
-.grid-fixed-row-height { grid-auto-rows: 100px; /* Adjust the height as needed */ }
-.grid-gap { gap: 1rem; /* Adjust the gap size as needed */ }
-.grid-item-span-two-columns { grid-column: span 2; }
-.grid-item-span-two-rows { grid-row: span 2; }
-
-@media (max-width: 767px) {
-  .d-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
-
-  .grid-item {
-    margin-bottom: 10px;
-  }
-}
+.bg.brand.main { background: var(--color-brand-main-500); }
+.bg.brand.main { background: var(--color-brand-main-500); }
 
 /* === Material symbols === */
 /* These classes help you style the material design symbols font collection. */
@@ -915,12 +959,6 @@ li {
 }
 
 /* == Basic Styles == */
-
-/* These classes are helpful for creating consistent and customizable themes for your elements, 
-making it easier to switch between light and dark themes or apply variations within each theme. 
-They are designed to provide a quick and consistent way to style elements for different 
-visual aesthetics on your website or application. */
-
 /* Base styles */
 
 .dark {
@@ -1121,17 +1159,14 @@ visual aesthetics on your website or application. */
   color: var(--color-context-info-500);
 }
 
-/* == Buttons == */
+/* ==================================== Buttons ==================================== */
 /* These classes let you create different type of buttons that can be used widely accross the project. */
 
 /* General styling */
-
 .btn {
   border-radius: var(--button-radius);
   padding: var(--button-padding);
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
   outline: none;
   border: none;
@@ -1146,20 +1181,43 @@ a.btn {
   box-sizing: border-box;
 }
 
-/* Buttons */
-
 /* Main buttons */
-
 .btn.main {
-  background: var(--color-brand-main-500);
+  background: var(--token-btn-main-bg);
+  color: var(--token-btn-main-content);
+}
+
+.btn.main:hover{
+  background: var(--token-btn-main-hover);
+}
+
+.btn.main:hover{
+  background: var(--token-btn-main-hover);
+}
+
+/* Main buttons Dark */
+/* When using a button inside a dark themed component */
+.dark .btn.main {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+}
+
+.dark .btn.main:hover{
+  background: var(--color-neutral-200);
+}
+
+/* Static style buttons */
+/* When using a button inside a dark themed component */
+.light .btn.main {
+  background: var(--color-neutral-900);
   color: var(--color-neutral-100);
 }
 
-.btn.main:hover,
-.btn.main:focus {
-  transform: scaleX(1.1);
+.light .btn.main:hover{
+  background: var(--color-neutral-700);
 }
 
+/* Main buttons used inside cards specifically setted up for giving context to the user */
 .brand-main   .btn.main { background: var(--color-brand-main-500); color: var(--color-neutral-100); }
 .brand-accent .btn.main { background: var(--color-brand-accent-500); color: var(--color-neutral-100); }
 .brand-aux    .btn.main { background: var(--color-brand-aux-500); color: var(--color-brand-aux-800); }
@@ -1169,43 +1227,62 @@ a.btn {
 .info         .btn.main { background: var(--color-context-info-500); }
 
 /* Secondary buttons */
-
 .btn.secondary {
-  background: none;
-  color: var(--color-neutral-100);
-  border: 1px solid var(--color-transparent-light-20);
+  background: var(--token-btn-secondary-bg);
+  color: var(--token-btn-secondary-content);
 }
 
-.btn.secondary:hover {
+.btn.secondary:hover{
+  background: var(--token-btn-secondary-hover);
+}
+
+/* Secondary buttons */
+/* When used inside a DARK component */
+.dark .btn.secondary {
   background: var(--color-transparent-light-10);
+  color: var(--color-neutral-100);
 }
 
+.dark .btn.secondary:hover{
+  background: var(--color-transparent-light-20);
+}
+
+/* When used inside a LIGTH component */
 .light .btn.secondary {
-  color: var(--color-transparent-dark-80);
-  border: 1px solid var(--color-transparent-dark-20);
-}
-
-.light .btn.secondary:hover {
   background: var(--color-transparent-dark-10);
+  color: var(--color-neutral-900);
 }
 
-.warning  .btn.secondary        { color: var(--color-transparent-dark-80); border: 1px solid var(--color-transparent-dark-10); }
-.warning  .btn.secondary:hover  { background: var(--color-transparent-dark-10); }
+.light .btn.secondary:hover{
+  background: var(--color-transparent-dark-20);
+}
 
 /* Ghost buttons */
-
 .btn.ghost {
-  background: none;
-  color: var(--color-neutral-100);
-}
-
-.light .btn.ghost {
-  background: none;
-  color: var(--color-transparent-dark-80);
+  background: transparent;
+  color: var(--token-btn-ghost-content);
 }
 
 .btn.ghost:hover {
-  background: var(--color-transparent-light-10);
+  background: var(--token-btn-ghost-hover);
+}
+
+/* Ghost buttons */
+/* When using a button inside a dark themed component */
+.dark .btn.ghost {
+  /* Add your styles here */
+}
+
+.dark .btn.ghost:hover{
+  /* Add your styles here */
+}
+
+
+/* Ghost buttons */
+
+.light .btn.ghost {
+  background: none;
+  color: var(--token-color-secondary);
 }
 
 .light .btn.ghost:hover {
@@ -1261,28 +1338,6 @@ a.btn {
   background: var(--color-transparent-light-20);
 }
 
-
-/* Square buttons */
-
-.btn.sqr {
-  border-radius: 16px;
-  border: 1px solid var(--neutral-alpha-light-20, rgba(255, 255, 255, 0.2));
-  background: var(--neutral-alpha-dark-10, rgba(13, 16, 19, 0.1));
-  backdrop-filter: blur(32px);
-  height: 160px;
-  width: 160px;
-  align-items: end;
-  justify-content: start;
-}
-
-/* Sizes */
-
-.btn.big {
-  width: 100%;
-  padding: 24px 32px;
-  font-size: 14px;
-}
-
 .btn.menu {
   background-color: var(--color-neutral-alpha-light-20);
   border: 1px solid var(--color-neutral-alpha-light-10);
@@ -1302,8 +1357,8 @@ a.btn {
   text-decoration: none;
 }
 
-/* == Chirp == */
-/* Label for use in cards. */
+/* ==================================== chips ==================================== */
+/* SECTION DESCRIPTION HERE */
 
 .chirp {
   padding: var(--base-size-8) var(--base-size-12);
@@ -1313,9 +1368,7 @@ a.btn {
   gap: var(--base-size-8);
   padding: var(--base-size-025) var(--base-size-075);
   border-radius: var(--card-radius);
-  /* Standard backdrop-filter */
   backdrop-filter: blur(16px);
-  /* Safari-specific -webkit-backdrop-filter */
   -webkit-backdrop-filter: blur(16px);
 }
 
@@ -1329,24 +1382,8 @@ a.btn {
   color: var(--color-transparent-light-80);
 }
 
-
-
 /* ==================================== controls ==================================== */
 /* SECTION DESCRIPTION HERE */
-
-/* select {
-  padding: 11px 1rem;
-  border-radius: var(--radius-2);
-  outline: none;
-  border: none;
-}
-
-select.light {
-  background: var(--color-neutral-alpha-light-10);
-  color: var(--color-neutral-solid-00);
-  border: 1px solid var(--color-neutral-alpha-light-10);
-} */
-
 
 textarea, select, input, button { outline: none; -webkit-appearance: none; }
 
@@ -1374,8 +1411,6 @@ select, .dark select{
   background-position: 95% 50%;
   background-repeat: no-repeat;
 }
-
-
 
 .chirp.shinny {
   border: 1px solid var(--color-neutral-alpha-light-20);
@@ -1485,18 +1520,17 @@ select, .dark select{
   border-color: var(--color-neutral-alpha-light-10);
 }
 
-/* == Navigation == */
+/* ==================================== Navigation ==================================== */
 /* These classes let you use the most impotant navigation tools */
 
 /* Navigation bar */
-
 nav {
   position: fixed;
   width: 100%;
-  padding: var(--base-size-050) var(--base-size-150);
+  padding: var(--base-size-100) var(--base-size-100);
   box-sizing: border-box;
-  background: var(--color-neutral-800);
-  border-bottom: 1px solid var(--color-transparent-light-10);
+  background: var(--token-bg-secondary);
+  border-bottom: 1px solid var(--token-border);
   z-index: 50;
 }
 
@@ -1504,7 +1538,7 @@ nav img {
   flex: 0 0 auto;
   /* Maintain the image's aspect ratio */
   object-fit: contain;
-  width: var(--base-size-96);
+  height: var(--base-size-125);
 }
 
 nav .desktop {
@@ -1515,6 +1549,18 @@ nav .desktop {
 nav .menu {
   display: flex;
   gap: var(--base-size-16);
+}
+
+nav .btn {
+  padding: var(--base-size-050);
+  display: flex;
+  align-content: center;
+  border: 1px solid var(--color-transparent-light-10);
+  color: var(--token-color-main);
+}
+
+nav .btn .material-symbols-outlined{
+  font-size: 16px;
 }
 
 nav .mobile {
@@ -1558,39 +1604,60 @@ nav .mobile .bar img {
   }
 }
 
-/* Sidebar */
+@media (prefers-color-scheme: light) {
+  nav img{
+    filter: invert(100%)
+  }  
+}
 
+
+/* ==================================== Sidebar ==================================== */
+/* These classes let you use the most impotant navigation tools */
 aside{
-  background: var(--color-neutral-800);
-  border-right: 1px solid var(--color-transparent-light-10);
+  background: var(--token-bg-main);
+  border-right: 1px solid var(--token-border);
+}
+
+aside a { 
+  text-decoration: none;
+}
+
+aside a:visited { 
+  color: inherit;
 }
 
 .sidebar {
   position: -webkit-sticky;
   position: sticky;
-  top: 80px;
+  top: var(--base-size-400);
   box-sizing: border-box;
   align-self: start;
   width: 240px;
   padding: var(--base-size-150);
   display: flex;
   flex-direction: column;
-  gap: var(--base-size-200);
+  gap: var(--base-size-100);
 }
 
-.sidebar .navigation-group{
+.sidebar div {
   display: flex;
   flex-direction: column;
   gap: var(--base-size-050);
 }
 
 .sidebar .tab{
-  padding: var(--base-size-075) var(--base-size-100);
+  padding: var(--base-size-050) var(--base-size-075);
   border-radius: var(--base-size-050);
   display: flex;
-  gap: var(--base-size-100);
-  align-items: center;
+  flex-direction: row;
+  gap: var(--base-size-075);
+  align-content: center;
   cursor: pointer;
+}
+
+.sidebar .tab .material-symbols-outlined { 
+  font-size: 16px;
+  color: var(--token-content-main);
 }
 
 .sidebar .tab.just-mobile{
@@ -1598,12 +1665,16 @@ aside{
 }
 
 .sidebar .tab:hover{
-  background: var(--color-transparent-light-10);
+  background: var(--token-btn-secondary-bg);
 }
 
 .sidebar .tab.selected{
-  background: var(--color-neutral-100);
-  color: var(--color-neutral-900);
+  background: var(--token-btn-main-bg);
+  color: var(--token-btn-main-content);
+}
+
+.sidebar .tab.selected > * {
+  color: var(--token-color-contrast);
 }
 
 @media screen and (max-width: 1200px) {
@@ -1625,9 +1696,9 @@ aside{
     width: 100%;
     position: fixed;
     bottom: 0px;
-    border-top: 1px solid var(--color-transparent-light-10);
+    border-top: 1px solid var(--token-border);
     z-index: 100;
-    background: var(--color-transparent-dark-80);
+    background: var(--token-bg-main-transparent);
     backdrop-filter: blur(64px);
     -webkit-backdrop-filter: blur(64px);
   }
@@ -1637,6 +1708,7 @@ aside{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     padding: var(--base-size-075) var(--base-size-150);
   }
 
@@ -1644,6 +1716,7 @@ aside{
     padding: 0px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--base-size-025);
   }
 
@@ -1665,7 +1738,7 @@ aside{
     font-size: 24px;  /* Preferred icon size */
   }
 
-  .navigation-group{
+  .menu{
     display: flex ;
     flex-direction: row !important;
     width: 95%;
@@ -1678,8 +1751,8 @@ aside{
   }
 }
 
-/* Toolbar */
-
+/* ==================================== Toolbar ==================================== */
+/* These classes let you use the most impotant navigation tools */
 .toolbar{
   padding: var(--base-size-075) var(--base-size-100);
   display: flex;
@@ -1688,7 +1761,7 @@ aside{
 }
 
 .toolbar.main, .toolbar.view-title{
-  background: var(--color-brand-main-900);
+  background: var(--color-brand-main-700);
   z-index: 50;
   position: sticky;
   top: 0px;
@@ -1759,114 +1832,8 @@ aside{
   }
 }
 
-/* Footer */
-
-footer {
-  background: none;
-}
-
-footer img {
-  display: block;
-  max-width: 6rem;
-  object-fit: contain; /* or object-fit: cover; */
-}
-
-footer menu {
-  padding: 0px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--base-size-80);
-  color: red;
-}
-
-footer menu a {
-  color: var(--color-neutral-alpha-light-80);
-  text-decoration: none;
-  background-size: 0% 100%;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: color 0.2s ease-in-out;
-  /* Use the -webkit prefix for better browser support */
-  /* The above two properties will make the text color transparent, so the gradient can show through */
-  display: inline-block; /* add display inline-block to make the link occupy only the necessary space */
-}
-
-footer menu a:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(47.06%, #80ff00),
-    color-stop(55.61%, #1ac8b3),
-    color-stop(64.91%, #3f6ce1),
-    color-stop(73.27%, #9527ec),
-    color-stop(83.53%, #ff006b)
-  );
-  background: linear-gradient(
-    180deg,
-    #80ff00 47.06%,
-    #1ac8b3 55.61%,
-    #3f6ce1 64.91%,
-    #9527ec 73.27%,
-    #ff006b 83.53%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-attachment: fixed;
-}
-
-footer .awards {
-  display: flex;
-  gap: var(--base-size-24);
-  color: var(--color-neutral-alpha-light-40);
-  flex-wrap: wrap;
-}
-
-footer .award {
-  width: 280px;
-}
-
-footer .award img {
-  height: 24px;
-  margin-bottom: var(--base-size-8);
-}
-
-footer .social {
-  display: flex;
-  justify-content: space-between;
-}
-
-footer .social a {
-  color: var(--color-neutral-solid-00) !important;
-  text-decoration: none;
-}
-
-@media screen and (max-width: 768px) {
-  footer {
-    padding-bottom: var(--base-size-80);
-  }
-
-  footer .award {
-    width: 100%;
-  }
-
-  footer .social {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--base-size-24);
-  }
-
-  footer .social .logos {
-    flex-wrap: wrap;
-    gap: var(--base-size-24);
-    justify-content: center;
-  }
-}
-
 /* ==================================== sections ==================================== */
 /* SECTION DESCRIPTION HERE */
-
 header {
   display: flex;
   flex-direction: column;
@@ -1932,7 +1899,7 @@ header.dark {
   overflow: auto;
 }
 
-/* == Titles == */
+/* ==================================== Titles ==================================== */
 /* SECTION DESCRIPTION HERE */
 
 .section-title{
@@ -1941,7 +1908,6 @@ header.dark {
   align-items: center;
   text-align: left;
   padding: 0px var(--base-size-125);
-  text-shadow: 0px 0px 16px var(--color-transparent-dark-80);
 }
 
 @media screen and (max-width: 900px) {
@@ -1950,14 +1916,29 @@ header.dark {
   }
 }
 
-/* == Basic cards == */
+/* ==================================== Cards ==================================== */
 /* This classes let you build basic cards, you can use them in conjuction with the Basic Styles classes to personalize them according to their function */
 
 .card {
-  border-radius: var(--radius-card, 24px);
-  border: 1px solid var(--color-transparent-light-20);
+  border-radius: 24px;
+  border: 1px solid var(--token-border);
+  background: var(--token-bg-secondary);
   overflow: hidden;
-  box-shadow: var(--shadow-elevation-8);
+  box-shadow: 0px 10px 48px rgba(0, 0, 0, 0.08);
+  transition: 350ms ease all;
+}
+
+.gradient-background {
+  background: linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2));
+}
+
+.card:hover{
+  border-color: var(--token-border-hover)
+}
+
+
+.card .card { 
+  border-radius: var(--card-radius);
 }
 
 .card.padded, .card .padded{
@@ -2072,6 +2053,22 @@ header.dark {
   }
 }
 
+/* ==================================== banner ==================================== */
+/* Blocks of information that has to be highlighted in the page */
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}
+
 .floating-actions {
   display: none;
   position: fixed;
@@ -2165,27 +2162,8 @@ header.dark {
   }
 }
 
-
-
 /* ======================================================================== */
-/* ======================================================================== */
-/* ======================================================================== */
-
-/* ======================================================================== */
-/* ======================================================================== */
-/* ======================================================================== */
-
-/* ======================================================================== */
-/* ======================================================================== */
-/* ======================================================================== */
-
-/* ======================================================================== */
-/* ======================================================================== */
-/* ======================================================================== */
-
-
-/* ======================================================================== */
-/* ==================================== local styles ==================================== */
+/* =========================== local styles =============================== */
 /* ======================================================================== */
 
 .companies-logos {
@@ -2377,11 +2355,36 @@ header.dark {
   color: var(--color-neutral-900);
 }
 
-.master.code h1 { 
-  background: var(--gradient-fancy, radial-gradient(277.44% 142.2% at 0% 0%, #C215FF 0%, #01B7B7 100%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.master-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.master-1 .actions {
+  display: flex;
+  gap: var(--base-size-100);
+}
+
+@media screen and (max-width: 900px) {
+  .master-1{
+    flex-direction: column;
+    gap: var(--base-size-150);
+  }
+}
+
+@keyframes animate-master {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.master-1.code {
+  background: linear-gradient(180deg, #D9A8FF 0%, rgba(176, 76, 255, 0.00) 100%), linear-gradient(270deg, #ffab8f 1%, #F18FFF 20%,  #CC8EFF 40%, #8F9AFF 60%,  #FF6EC8 80%, #D9A8FF 100%);
+  animation: animate-master 16s linear infinite alternate;
+  background-size: 1000% 100%;
 }
 
 /* .course {
@@ -2391,7 +2394,6 @@ header.dark {
 .course .header{
   padding: 0px var(--base-size-150);
 }
-
 
 @media screen and (max-width: 900px) {
   .master .header {
