@@ -8,5 +8,111 @@
     <link rel="stylesheet" href="css/test.css">
 </head>
 <body>
+    <nav class="d-flex justify-content-between align-items-center">
+        <img src="img/devf.svg" alt="">
+        <div class="d-flex gap-050">
+            <button class="btn ghost">
+                <span class="material-symbols-outlined">help</span>
+            </button>
+            <button class="btn ghost">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="toolbar">
+        <div class="tabs">
+            <div class="tab selected">
+                <span class="caption">🙋‍♂️</span>
+                <span class="label">Perfil</span>
+            </div>
+            <div class="tab">
+                <span class="caption">⚙️</span>
+                <span class="label">Cuenta</span>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+    <div class="container d-flex flex-direction-column py-500 gap-100">
+
+        <div class="card">
+            <div class="padded">
+                <h6>Hello world</h6>
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="">Nombre</label>
+                <input type="text" placeholder="Escribe tu nombre">
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="">Apellidos</label>
+                <input type="text" placeholder="Escribe tus apellidos">
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="">Fecha de nacimiento</label>
+                <input type="date">
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="gender">Género</label>
+                <select id="gender">
+                    <option value="male">Masculino</option>
+                    <option value="female">Femenino</option>
+                    <option value="other">Otro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="padded">
+                <h6>Hello world</h6>
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="">Nombre</label>
+                <input type="text" placeholder="Escribe tu nombre">
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="">Apellidos</label>
+                <input type="text" placeholder="Escribe tus apellidos">
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="">Fecha de nacimiento</label>
+                <input type="date">
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="">Text field</label>
+                <input type="text" placeholder="this is a text field">
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <span class="switch-text">Toggle Switch</span>
+                <input type="checkbox" id="switch-a" class="checkbox">
+                <label for="switch-a" class="switch-label"></label>
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <span class="switch-text">Toggle Switch</span>
+                <input type="checkbox" id="switch-b" class="checkbox">
+                <label for="switch-b" class="switch-label"></label>
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <span class="switch-text">Toggle Switch</span>
+                <input type="checkbox" id="switch-c" class="checkbox">
+                <label for="switch-c" class="switch-label"></label>
+            </div>
+            <div class="d-flex justify-content-between padded-compact item">
+                <label for="gender">Género</label>
+                <select id="gender">
+                    <option value="male">Masculino</option>
+                    <option value="female">Femenino</option>
+                    <option value="other">Otro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn main">Guardar</button>
+            <button class="btn ghost">Cancelar</button>
+        </div>
+    </div>
 </body>
 </html>

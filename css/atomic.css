@@ -223,6 +223,7 @@
     /* Radius tokens */
     --button-radius: var(--base-size-300);
     --card-radius: var(--base-size-150);
+    --card-nested-radius: var(--base-size-100);
   
     /* Padding tokens */
     --button-padding: var(--base-size-050) var(--base-size-100);
@@ -234,7 +235,8 @@
     --token-bg-secondary: var(--color-neutral-800);
     --token-bg-contrast: var(--color-neutral-100);
     --token-bg-subtle: var(--color-transparent-light-10);
-    --token-bg-main-transparent: var(--color-transparent-dark-80);
+    --token-bg-group: var(--color-transparent-light-20);
+    --token-bg-main-transparent: var(--color-transparent-dark-60);
   
     /* Content Tokens */
     --token-content-main: var(--color-neutral-100);
@@ -268,7 +270,8 @@
     --token-bg-secondary: var(--color-neutral-200);
     --token-bg-contrast: var(--color-neutral-900);
     --token-bg-subtle: var(--color-transparent-dark-10);
-    --token-bg-main-transparent: var(--color-transparent-light-80);
+    --token-bg-group: var(--color-transparent-dark-20);
+    --token-bg-main-transparent: var(--color-transparent-light-60);
   
     /* Content Tokens */
     --token-content-main: var(--color-neutral-900);
@@ -958,207 +961,6 @@ li {
   font-size: 32px !important;
 }
 
-/* == Basic Styles == */
-/* Base styles */
-
-.dark {
-  background: var(--color-neutral-900);
-  color: var(--color-neutral-100);
-  border-color: 1px solid var(--color-transparent-light-20);
-}
-
-.light {
-  background: var(--color-neutral-100);
-  color: var(--color-neutral-900);
-  border-color: 1px solid var(--color-transparent-dark-20);
-}
-
-/* Modifiers */
-
-.dark.secondary {
-  background: var(--color-neutral-800);
-  color: var(--color-neutral-100);
-}
-
-.light.secondary {
-  background: var(--color-neutral-200);
-  color: var(--color-neutral-900);
-}
-
-/* Brand colors */
-
-/* Main */
-
-.dark.brand-main{
-  background: var(--color-brand-main-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.brand-main{
-  background: var(--color-brand-main-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.brand-main h1,
-.light.brand-main h2,
-.light.brand-main h3,
-.light.brand-main h4,
-.light.brand-main h5,
-.light.brand-main h6 {
-  color: var(--color-brand-main-500);
-}
-
-/* Accent */
-
-.dark.brand-accent{
-  background: var(--color-brand-accent-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.brand-accent{
-  background: var(--color-brand-accent-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.brand-accent h1,
-.light.brand-accent h2,
-.light.brand-accent h3,
-.light.brand-accent h4,
-.light.brand-accent h5,
-.light.brand-accent h6 {
-  color: var(--color-brand-accent-500);
-}
-
-/* Aux */
-
-.dark.brand-aux{
-  background: var(--color-brand-aux-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.brand-aux{
-  background: var(--color-brand-aux-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.brand-aux h1,
-.light.brand-aux h2,
-.light.brand-aux h3,
-.light.brand-aux h4,
-.light.brand-aux h5,
-.light.brand-aux h6 {
-  color: var(--color-brand-aux-600);
-}
-
-.brand-aux .btn.main{
-  background: var(--color-brand-aux-400);
-  color: var(--color-brand-aux-800);
-}
-
-/* Contextual styles */
-
-/* Success */
-
-.dark.success{
-  background: var(--color-context-success-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.success{
-  background: var(--color-context-success-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.success h1,
-.light.success h2,
-.light.success h3,
-.light.success h4,
-.light.success h5,
-.light.success h6 {
-  color: var(--color-context-success-600);
-}
-
-/* Warning */
-
-.warning, .dark.warning{
-  background: var(--color-context-warning-500);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.dark.warning .text-secondary{
-  color: var(--color-transparent-dark-40)
-}
-
-.light.warning{
-  background: var(--color-context-warning-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.warning h1,
-.light.warning h2,
-.light.warning h3,
-.light.warning h4,
-.light.warning h5,
-.light.warning h6 {
-  color: var(--color-context-warning-700);
-}
-
-/* Danger */
-
-.dark.danger{
-  background: var(--color-context-danger-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.danger{
-  background: var(--color-context-danger-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.danger h1,
-.light.danger h2,
-.light.danger h3,
-.light.danger h4,
-.light.danger h5,
-.light.danger h6 {
-  color: var(--color-context-danger-500);
-}
-
-/* Info */
-
-.dark.info{
-  background: var(--color-context-info-700);
-  color: var(--color-neutral-100);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.info{
-  background: var(--color-context-info-100);
-  color: var(--color-neutral-900);
-  border-color: var(--color-transparent-dark-10);
-}
-
-.light.info h1,
-.light.info h2,
-.light.info h3,
-.light.info h4,
-.light.info h5,
-.light.info h6 {
-  color: var(--color-context-info-500);
-}
-
 /* ==================================== Buttons ==================================== */
 /* These classes let you create different type of buttons that can be used widely accross the project. */
 
@@ -1361,15 +1163,11 @@ a.btn {
 /* SECTION DESCRIPTION HERE */
 
 .chirp {
-  padding: var(--base-size-8) var(--base-size-12);
-  font-size: var(--base-size-16);
-  border-radius: var(--radius-192);
-  display: flex;
-  gap: var(--base-size-8);
-  padding: var(--base-size-025) var(--base-size-075);
-  border-radius: var(--card-radius);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--token-bg-subtle);
+  align-self: start;
+  padding: var(--base-size-025) var(--base-size-050);
+  font-size: 0.75rem;
+  border-radius: var(--button-radius);
 }
 
 .light .chirp {
@@ -1385,7 +1183,7 @@ a.btn {
 /* ==================================== controls ==================================== */
 /* SECTION DESCRIPTION HERE */
 
-textarea, select, input, button { outline: none; -webkit-appearance: none; }
+/* textarea, select, input, button { outline: none; -webkit-appearance: none; } */
 
 select {
   border-radius: var(--button-radius);
@@ -1430,6 +1228,85 @@ select, .dark select{
   color: var(--color-neutral-solid-100);
 }
 
+/* ==================================== Swtich ==================================== */
+/* SECTION DESCRIPTION HERE */
+
+.checkbox {
+  display: none;
+}
+
+.switch-label {
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  background-color: var(--token-bg-subtle);
+  border: 1px solid var(--token-border);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12) inset;
+  border-radius: 14px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.switch-label:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  background: linear-gradient(var(--color-neutral-100), var(--color-neutral-200));
+  top: 2px;
+  left: 2px;
+  transition: 0.3s ease-in-out;
+}
+
+.checkbox:checked + .switch-label:before {
+  transform: translateX(16px);
+  box-shadow: -4px 0px 24px 0px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(white, rgb(240, 240, 240));
+  border: 1px solid var(--color-transparent-light-10) inset;
+}
+
+.checkbox:checked + .switch-label {
+  background: var(--color-context-success-500);
+}
+
+/* Optional styles to enhance appearance */
+.switch-label:active:before {
+  /* width: 30px; */
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.switch-text {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: var(--token-content-main);
+}
+
+
+
+/* ==================================== Input text ==================================== */
+/* SECTION DESCRIPTION HERE */
+
+.item input, .item select {
+  -webkit-appearance: none;
+  outline: none;
+  border: 1px solid var(--color-neutral-alpha-light-10);
+  border-radius: var(--button-radius);
+  padding: var(--base-size-050) var(--base-size-100);
+  background: var(--token-bg-subtle);
+  color: var(--token-content-main);
+  min-width: 160px;
+}
+
+.item input::placeholder{
+  color: var(--token-content-secondary);
+}
+
 .weekly-selector {
   display: flex;
   flex-direction: column;
@@ -1440,6 +1317,37 @@ select, .dark select{
   border-radius: var(--radius-3);
   flex-wrap: wrap;
 }
+
+/* ==================================== actions ==================================== */
+/* SECTION DESCRIPTION HERE */
+
+.main-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--base-size-050);
+  padding: var(--base-size-100);
+}
+
+.main-actions .btn{
+  width: 30%;
+}
+
+@media screen and (max-width: 720px) {
+  .main-actions {
+    background: var(--token-bg-main-transparent);
+    backdrop-filter: blur(64px);
+    -webkit-backdrop-filter: blur(64px);
+    border-top: 1px solid var(--token-border);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    margin-left: -1rem;
+  }
+}
+
+/* ==================================== Weekly selector ==================================== */
+/* SECTION DESCRIPTION HERE */
 
 .weekly-selector #month {
   font-size: 1.25rem;
@@ -1753,84 +1661,89 @@ aside a:visited {
 
 /* ==================================== Toolbar ==================================== */
 /* These classes let you use the most impotant navigation tools */
+
 .toolbar{
-  padding: var(--base-size-075) var(--base-size-100);
+  padding: var(--base-size-050) var(--base-size-100);
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.toolbar.main, .toolbar.view-title{
-  background: var(--color-brand-main-700);
-  z-index: 50;
-  position: sticky;
-  top: 0px;
-}
-
-.toolbar .tab-group {
-  display: flex;
-  flex-direction: row;
-  gap: var(--base-size-050);
-}
-
-.toolbar .tab{
-  border-radius: var(--card-radius);
-  padding: var(--base-size-050) var(--base-size-100);
-  border: none;
-  background: var(--color-transparent-light-10);
-  color: white;
-}
-
-.toolbar .tab:hover{
-  background: var(--color-transparent-light-20);
-}
-
-.toolbar .tab.selected{
-  background: var(--color-neutral-100);
-  color: var(--color-brand-main-800);
-}
-
-.toolbar .tab.selected:hover{
-  background: var(--color-neutral-100);
-  color: var(--color-brand-main-800);
-}
-
-.toolbar input[type=text], .toolbar input[type=number] {
-  background: var(--color-transparent-light-10);
-  border: 1px solid var(--color-transparent-light-20);
-}
-
-.search{
   background: red;
-}
-
-.card .toolbar{
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.00) 100%);
+  position: sticky;
+  top: 67px;
+  margin-bottom: var(--base-size-100);
+  background: var(--token-bg-main-transparent);
+  border-bottom: 1px solid var(--token-border);
+  -webkit-backdrop-filter: blur(64px);
+  backdrop-filter: blur(64px);
 }
 
 @media screen and (max-width: 720px) {
-  .toolbar.main { 
-    flex-direction: column;
-    gap: var(--base-size-100);
-    padding: var(--base-size-100);
-  }
-
-  .toolbar.view-title{
-    padding: var(--base-size-125) var(--base-size-100);
-  }
-
-  .toolbar.view-title h6{
-    text-overflow: ellipsis;
-  }
-
-  .toolbar.main div{
-    width: 100%;
-  }
-
-  .toolbar > input, .toolbar select { 
-    width: 100%;
+  .toolbar{
+    top: 58px;
   }
 }
+
+/* ==================================== Toolbar tabs ==================================== */
+/* These classes let you use the most impotant navigation tools */
+
+.toolbar .tabs {
+  display: flex;
+  gap: var(--base-size-025);
+  margin: 0px -1rem;
+  padding: 0px 0.5rem;
+}
+
+.toolbar .tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.toolbar .tabs .tab { 
+  padding: var(--base-size-025) var(--base-size-100);
+  border-radius: var(--base-size-100);
+  background: var(--token-btn-secondary-bg);
+  display: flex;
+  gap: var(--base-size-050);
+  align-items: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.toolbar .tabs .tab:hover { 
+  background: var(--token-btn-secondary-hover);
+}
+
+
+.toolbar .tabs .tab.selected{
+  background: var(--token-bg-contrast);
+  color: var(--token-btn-main-content);
+}
+
+
+@media screen and (max-width: 720px) {
+  .toolbar .tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE/Edge */
+  }
+}
+
+/* ==================================== Page title ==================================== */
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-025);
+  padding: var(--base-size-025) var(--base-size-100);
+}
+
+/* ==================================== breadcrumbs ==================================== */
+/* SECTION DESCRIPTION HERE */
+
+.breadcrumbs {
+  color: var(--token-content-secondary);
+}
+
 
 /* ==================================== sections ==================================== */
 /* SECTION DESCRIPTION HERE */
@@ -1924,7 +1837,7 @@ header.dark {
   border: 1px solid var(--token-border);
   background: var(--token-bg-secondary);
   overflow: hidden;
-  box-shadow: 0px 10px 48px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 8px 48px rgba(0, 0, 0, 0.10);
   transition: 350ms ease all;
 }
 
@@ -1938,11 +1851,15 @@ header.dark {
 
 
 .card .card { 
-  border-radius: var(--card-radius);
+  border-radius: var(--card-nested-radius);
 }
 
 .card.padded, .card .padded{
   padding: var(--card-padding);
+}
+
+.card.padded-compact, .card .padded-compact{
+  padding: var(--base-size-050) var(--card-padding);
 }
 
 .card .actions{
@@ -1956,8 +1873,273 @@ header.dark {
   gap: 0px;
 }
 
+/* == Basic Styles == */
+/* Base styles */
+
+.dark {
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-100);
+  border: 1px solid var(--color-transparent-light-10) !important;
+}
+
+.light {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+  border: 1px solid var(--color-transparent-dark-10) !important;
+}
+
+/* Modifiers */
+
+.dark.secondary {
+  background: var(--color-neutral-800);
+  color: var(--color-neutral-100);
+}
+
+.light.secondary {
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+}
+
+/* Brand colors */
+
+/* Main */
+
+.dark.brand-main{
+  background: var(--color-brand-main-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-main{
+  background: var(--color-brand-main-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-main h1,
+.light.brand-main h2,
+.light.brand-main h3,
+.light.brand-main h4,
+.light.brand-main h5,
+.light.brand-main h6 {
+  color: var(--color-brand-main-500);
+}
+
+/* Accent */
+
+.dark.brand-accent{
+  background: var(--color-brand-accent-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-accent{
+  background: var(--color-brand-accent-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-accent h1,
+.light.brand-accent h2,
+.light.brand-accent h3,
+.light.brand-accent h4,
+.light.brand-accent h5,
+.light.brand-accent h6 {
+  color: var(--color-brand-accent-500);
+}
+
+/* Aux */
+
+.dark.brand-aux{
+  background: var(--color-brand-aux-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-aux{
+  background: var(--color-brand-aux-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.brand-aux h1,
+.light.brand-aux h2,
+.light.brand-aux h3,
+.light.brand-aux h4,
+.light.brand-aux h5,
+.light.brand-aux h6 {
+  color: var(--color-brand-aux-600);
+}
+
+.brand-aux .btn.main{
+  background: var(--color-brand-aux-400);
+  color: var(--color-brand-aux-800);
+}
+
+/* Contextual styles */
+
+/* Success */
+
+.dark.success{
+  background: var(--color-context-success-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.success{
+  background: var(--color-context-success-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.success h1,
+.light.success h2,
+.light.success h3,
+.light.success h4,
+.light.success h5,
+.light.success h6 {
+  color: var(--color-context-success-600);
+}
+
+/* Warning */
+
+.warning, .dark.warning{
+  background: var(--color-context-warning-500);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.dark.warning .text-secondary{
+  color: var(--color-transparent-dark-40)
+}
+
+.light.warning{
+  background: var(--color-context-warning-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.warning h1,
+.light.warning h2,
+.light.warning h3,
+.light.warning h4,
+.light.warning h5,
+.light.warning h6 {
+  color: var(--color-context-warning-700);
+}
+
+/* Danger */
+
+.dark.danger{
+  background: var(--color-context-danger-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.danger{
+  background: var(--color-context-danger-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.danger h1,
+.light.danger h2,
+.light.danger h3,
+.light.danger h4,
+.light.danger h5,
+.light.danger h6 {
+  color: var(--color-context-danger-500);
+}
+
+/* Info */
+
+.dark.info{
+  background: var(--color-context-info-700);
+  color: var(--color-neutral-100);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.info{
+  background: var(--color-context-info-100);
+  color: var(--color-neutral-900);
+  border-color: var(--color-transparent-dark-10);
+}
+
+.light.info h1,
+.light.info h2,
+.light.info h3,
+.light.info h4,
+.light.info h5,
+.light.info h6 {
+  color: var(--color-context-info-500);
+}
+
+/* ==================================== rankings ==================================== */
+/* SECTION DESCRIPTION HERE */
+
+
+/* Keyframes para animación */
+@keyframes shimmer {
+  0% {
+     background-position: 0% 0%;
+  }
+  100% {
+     background-position: 100% 100%;
+  }
+}
+
+/* Estilo para los elementos */
+/* div {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 50%;
+  animation: shimmer 2s linear infinite;
+} */
+
+/* Estilo para el fondo de gradiente bronce */
+.bronze {
+  background-color: #c45e2b; /* Color bronce */
+  background-image: linear-gradient(45deg, transparent 50%, rgba(224, 44, 24, 0.8));
+  color: var(--color-neutral-100);
+  animation: shimmer 2s linear infinite;
+}
+
+/* Estilo para el fondo de gradiente plata */
+.silver {
+  background-color: #dfdfdf; /* Color plata */
+   background-image: linear-gradient(45deg, transparent 50%, rgba(171, 183, 189, 0.8));
+   color: var(--color-neutral-900);
+  animation: shimmer 2s linear infinite;
+}
+
+/* Estilo para el fondo de gradiente oro */
+.gold {
+  background-color: #ffd700; /* Color oro */
+   background-image: linear-gradient(45deg, transparent 50%, rgba(255, 157, 0, 0.8));
+   color: var(--color-neutral-900);
+  animation: shimmer 2s linear infinite;
+}
+
+/* Estilo para el fondo de gradiente platino */
+.platinum {
+  background-color: rgb(137, 206, 167); /* Color platino */
+   background-image: linear-gradient(45deg, transparent 50%, rgba(46, 195, 113, 0.8));
+   color: var(--color-neutral-900);
+   animation: shimmer 2s linear infinite;
+}
+
+/* Estilo para el fondo de gradiente diamante */
+.diamond {
+  background-color: #bfefff; /* Color diamante */
+   background-image: linear-gradient(45deg, transparent 50%, rgba(240, 191, 255, 0.8));
+   color: var(--color-neutral-900);
+  animation: shimmer 2s linear infinite;
+}
+
 /* ==================================== cards ==================================== */
 /* SECTION DESCRIPTION HERE */
+
 
 .stretch {
   flex: 1;
@@ -2045,13 +2227,42 @@ header.dark {
 
   .container {
     flex-wrap: wrap;
-    padding-bottom: var(--base-size-500);
   }
 
   .row {
     flex-direction: column;
   }
 }
+
+/* ==================================== Content cards ==================================== */
+/* Blocks of information that has to be highlighted in the page */
+
+.card .title{ 
+  font-weight: 700;
+  border-bottom: 1px solid var(--token-border);
+  background: var(--token-bg-subtle);
+}
+
+.card .item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--base-size-125);
+  border-bottom: 1px solid var(--token-border);
+  padding: var(--base-size-125) var(--base-size-100);
+}
+
+.card .item .material-symbols-outlined{
+  color: var(--token-content-secondary);
+}
+
+.card .item:hover{
+  /* background: var(--token-bg-subtle); */
+/* Styling for the outer container */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(24, 9, 237, 0.16), rgba(255, 0, 115, 0.24));
+  color: var(--token-content-main);
+}
+
 
 /* ==================================== banner ==================================== */
 /* Blocks of information that has to be highlighted in the page */
@@ -2259,9 +2470,23 @@ header.dark {
 
 /* Define the LED class */
 .led {
-  width: 16px;
-  height: 16px;
+  width: var(--base-size-050);
+  height: var(--base-size-050);
   border-radius: 50%;
+  background: var(--token-bg-subtle);
+}
+
+.led.wip {
+  background-color: var(--token-content-main);
+  box-shadow: 0 0 10px #FFF;
+}
+
+.led.done {
+  background-color: var(--color-context-success-600);
+  box-shadow: 0 0 10px var(--color-context-success-400);
+}
+
+.led.blinking {
   background-color: var(--color-neutral-solid-90);
   box-shadow: 0 0 10px #f00;
   animation: blink 3s infinite;

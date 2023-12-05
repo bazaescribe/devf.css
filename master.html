@@ -13,10 +13,8 @@
 </head>
 <body>
     <nav class="d-flex justify-content-between align-items-center">
-        <div>
-            <img src="img/logo.png" alt="">
-        </div>
-        <div class="d-flex gap-100">
+        <img src="img/devf.svg" alt="">
+        <div class="d-flex gap-050">
             <button class="btn ghost">
                 <span class="material-symbols-outlined">help</span>
             </button>
@@ -26,10 +24,10 @@
         </div>
     </nav>
 
-    <main class="d-flex dash-container">
+    <main class="pt-400 d-flex dash-container">
         <aside>
             <div class="sidebar">
-                <div class="navigation-group">
+                <div class="menu">
                     <div class="tab">
                         <span class="icon material-symbols-outlined">home</span>
                         <span class="label">Inicio</span>
@@ -44,251 +42,468 @@
                     </div>
                 </div>
 
-                <div class="navigation-group" id="my-courses">
+                <div class="menu" id="my-courses">
                     <p class="caption text-secondary-light">Mis cursos</p>
-                    <div class="tab selected">
-                        <span class="icon">👾</span>
-                        <span class="label">Code</span>
-                    </div>
+                    <a href="/master.html">
+                        <div class="tab selected">
+                            <span class="caption">👾</span>
+                            <span class="label">Code</span>
+                        </div>
+                    </a>
                     <div class="tab">
-                        <span class="icon">💪</span>
+                        <span class="caption">💪</span>
                         <span class="label">Power Siklls</span>
                     </div>
                     <div class="tab">
-                        <span class="icon">🐱</span>
+                        <span class="caption">🐱</span>
                         <span class="label">Control de versiones</span>
                     </div>
                 </div>
             </div>
         </aside>
 
-        <section class="stretch">
-
-            <div class="toolbar main">
-                <div class="tab-group">
-                    <button class="tab selected">
-                        📔 Lecciones
-                    </button>
-                    <button class="tab">
-                        💼 Portafolio
-                    </button>
-                    <button class="tab">
-                        📊 Estadísticas
-                    </button>
-                    <button class="tab">
-                        ℹ️ Info
-                    </button>
-                </div>
-                <div>
-                    <select name="" id="">
-                        <option value="1">M1. Intro a la web</option>
-                        <option value="2">M2. Intro a Javascript</option>
-                        <option value="3">M3. Computer Science</option>
-                        <option value="4">M4. JS Avanzado</option>
-                        <option value="5">M5. Intro a Frontend</option>
-                        <option value="6">M6. Frontend Avanzado</option>
-                        <option value="7">M7. Backend + SQL</option>
-                        <option value="8">M8. Backend + NoSQL</option>
-                        <option value="9">M9. Full Stack</option>
-                        <option value="10">M10. Design Sprint</option>
-                    </select>
-                </div>
-            </div>
+        <section class="py-150 stretch bg-homepage scrollable-content">
             
             <!-- This is where we put anything we wanna show in this screen -->
 
-            <div class="container py-200 d-flex flex-direction-column gap-300 ">
-                
-                <div class="d-flex flex-direction-column gap-100">
-                    <div class="section-title">
-                        <div class="text">
-                            <h5>Mis masters</h5>
-                            <p class="caption">Cursos intensivos de diez módulos</p>
+            <div>
+                <div class="page-title">
+                    <div class="d-flex flex-wrap align-items-center caption breadcrumbs"> 
+                        <span>Masters</span>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span>Code</span>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span>M1. Intro a la web</span>
+                    </div>
+                    <h4>Intro a la web</h4>
+                </div>
+            </div>
+            <div class="toolbar">
+                <div class="tabs">
+                    <div class="tab selected">
+                        <span class="caption">📔</span>
+                        <span class="label">Lecciones</span>
+                    </div>
+                    <div class="tab">
+                        <span class="caption">🦾</span>
+                        <span class="label">Proyectos</span>
+                    </div>
+                    <div class="tab">
+                        <span class="caption">📊</span>
+                        <span class="label">Estadísticas</span>
+                    </div>
+                    <div class="tab">
+                        <span class="caption">👏</span>
+                        <span class="label">Mi grupo</span>
+                    </div>
+                    <div class="tab">
+                        <span class="caption">💬</span>
+                        <span class="label">Discord</span>
+                    </div>
+                    <div class="tab">
+                        <span class="caption">📹</span>
+                        <span class="label">Mi clase</span>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            <div class="container d-flex flex-direction-column gap-200 pb-300">
+
+                <div class="row gap-100">
+                    <div class="card dark padded bg-dark row gap-100">
+                        <div>
+                            <img src="img/rings.png" alt="">
                         </div>
-                        <div class="actions">
-                            <button class="btn ghost">ver más</button>
+                        <div>
+                            <p class="caption">2 de 4 sesiones en vivo</p>
+                            <p class="caption">4 de 16 puntos en quizzes</p>
+                            <p class="caption">6 de 12 ejercicios y proyectos</p>
+                        </div>
+                    </div>
+                    <div class="card padded flex-direction-column justify-content-center align-content-center text-align-center bronze">
+                        <p class="small">Tu rango es</p>
+                        <h6>Bronce</h6>
+                        <img src="img/ranks/bronze.png" alt="">
+                        <div class="small">Mejora tu nivel completando lecturas y ejercicios</div>
+                    </div>
+                    <div class="card info dark padded">
+                        <img src="img/profile.png" alt="">
+                        <h6>Juan Manuel Pérez</h6>
+                        <p class="caption">Sensei del módulo</p>
+                    </div>
+                </div>
+                
+
+                <div class="d-flex flex-direction-column gap-200">
+                    <div class="lecture d-flex flex-direction-column gap-100">
+                        <div class="section-title">
+                            Día Cero, 30 mayo de 2024
+                        </div>
+                        <div class="card">
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led wip"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card dark master code">
-                        <div class="toolbar dark">
-                            <div class="chirp">Progreso 10%</div>
-                            <button class="btn tool">
-                                <span class="material-symbols-outlined">share</span>
-                            </button>
-                        </div>
-                        <div class="header">
-                            <h1>CODE</h1>
-                            <p>
-                                Aprende todo lo relacionado al desarrollo web desde las bases hasta construir un producto real
-                            </p>
-                            <h6>
-                                Generación 32
-                            </h6>
-                        </div>
-                        <div class="dock row">
-                            <div class="shortcut main">
-                                <span class="material-symbols-outlined xl">video_camera_front</span>
-                                <div>
-                                    <p class="text-bold">
-                                        Ir a mi clase
-                                    </p>
-                                    <p class="small">
-                                        Lunes y Miércoles, 6:30 PM
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="shortcut">
-                                <span class="material-symbols-outlined xl">assignment</span>
-                                <div>
-                                    <p class="text-bold">
-                                        Ver contenido
-                                    </p>
-                                    <p class="small">
-                                        Completa lecciones, realiza prácticas y obtén puntos
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="shortcut">
-                                <span class="material-symbols-outlined xl">lightbulb</span>
-                                <div>
-                                    <p class="text-bold">
-                                        Ver portafolio
-                                    </p>
-                                    <p class="small">
-                                        Construye proyectos reales y muéstralos al mundo
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="shortcut">
-                                <span class="material-symbols-outlined">notifications_none</span>
-                                <span class="bold">Hello</span>
-                                <p>
-                                    Lunes y Miércoles
-                                    <br>
-                                    6:30 PM
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
-                <div class="d-flex flex-direction-column gap-100">
-                    <div class="section-title">
-                        <div class="text">
-                            <h5>Noticias</h5>
-                            <p class="caption">Información relevante sobre dev.f</p>
+                <div class="d-flex flex-direction-column gap-200">
+                    <div class="lecture d-flex flex-direction-column gap-100">
+                        <div class="section-title">
+                            Día Cero, 30 mayo de 2024
                         </div>
-                        <div class="actions">
-                            <button class="btn ghost">ver más</button>
-                        </div>
-                    </div>
-
-                    <div class="row gap-100">
-                        <div class="card dark secondary padded d-flex flex-direction-column gap-100">
-                            <div>
-                                <p class="text-bold">#category</p>
-                                <p class="small">timestamp</p>
+                        <div class="card">
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
                             </div>
-                            <p>
-                                Text message Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde illum ut voluptatem. Impedit obcaecati, quisquam nulla vero perspiciatis facere veniam.
-                            </p>
-                            <button class="btn secondary align-self-start"> ok </button>
-                        </div>
-                        <div class="card dark secondary padded d-flex flex-direction-column gap-100">
-                            <div>
-                                <p class="text-bold">#category</p>
-                                <p class="small">timestamp</p>
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
                             </div>
-                            <p>
-                                Text message Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde illum ut voluptatem. Impedit obcaecati, quisquam nulla vero perspiciatis facere veniam.
-                            </p>
-                            <button class="btn secondary align-self-start"> ok </button>
-                        </div>
-                        <div class="card dark info padded d-flex flex-direction-column gap-100">
-                            <div>
-                                <p class="text-bold">#category</p>
-                                <p class="small">timestamp</p>
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
                             </div>
-                            <p>
-                                Text message Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde illum ut voluptatem. Impedit obcaecati, quisquam nulla vero perspiciatis facere veniam.
-                            </p>
-                            <button class="btn secondary align-self-start"> ok </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-direction-column gap-100">
-                    <div class="section-title">
-                        <div class="text">
-                            <h5>Cursos</h5>
-                            <p class="caption">Programas cortos para complementar tu aprendizaje</p>
-                        </div>
-                        <div class="actions">
-                            <button class="btn ghost">ver más</button>
-                        </div>
-                    </div>
-                    <div class="row gap-100">
-                        <div class="card dark brand-main course code">
-                            <div class="toolbar">
-                                <div class="chirp">10%</div>
-                                <button class="btn tool">
-                                    <span class="material-symbols-outlined">share</span>
-                                </button>
+                            <div class="item">
+                                <div>
+                                    <div class="led wip"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
                             </div>
-                            <div class="header">
-                                <h1>💪</h1>
-                                <h4>Power Skills</h4>
-                                <p>
-                                    Aprende todo lo relacionado al desarrollo web desde las bases hasta construir un producto real
-                                </p>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
                             </div>
-                            <div class="padded">
-                                <button class="btn main">ver curso</button>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card dark brand-main course code">
-                            <div class="toolbar">
-                                <div class="chirp">10%</div>
-                                <button class="btn tool">
-                                    <span class="material-symbols-outlined">share</span>
-                                </button>
-                            </div>
-                            <div class="header">
-                                <h1>🐱</h1>
-                                <h4>Control de versiones</h4>
-                                <p>
-                                    Aprende todo lo relacionado al desarrollo web desde las bases hasta construir un producto real
-                                </p>
-                            </div>
-                            <div class="padded">
-                                <button class="btn main">ver curso</button>
-                            </div>
-                        </div>
-                        <div class="card dark brand-main course code">
-                            <div class="toolbar">
-                                <div class="chirp">10%</div>
-                                <button class="btn tool">
-                                    <span class="material-symbols-outlined">share</span>
-                                </button>
-                            </div>
-                            <div class="header">
-                                <h1>🇺🇸</h1>
-                                <h4>Taller de inglés</h4>
-                                <p>
-                                    Aprende todo lo relacionado al desarrollo web desde las bases hasta construir un producto real
-                                </p>
-                            </div>
-                            <div class="padded">
-                                <button class="btn main">ver curso</button>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                
-                
+                <div class="d-flex flex-direction-column gap-200">
+                    <div class="lecture d-flex flex-direction-column gap-100">
+                        <div class="section-title">
+                            Día Cero, 30 mayo de 2024
+                        </div>
+                        <div class="card">
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led done"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led wip"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    <div class="led"></div>
+                                </div>
+                                <div class="d-flex flex-direction-column gap-075 stretch">
+                                    <p>¿Cómo funciona internet?</p>
+                                    <div class="d-flex align-items-center gap-075 text-secondary small">
+                                        <span class="chirp">Sesión en vivo</span>
+                                        <span>date</span>
+                                        <span>hour</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                 
+                </div>
+               
             </div>
         </section>
     </main>
